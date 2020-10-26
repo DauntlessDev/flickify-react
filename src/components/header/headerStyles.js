@@ -19,7 +19,7 @@ export const Logo = styled.img`
     height: 50px;
 `;
 
-export const Link = styled.p`
+export const TextLink = styled.p`
     text-decoration: none;
     margin: auto 17px;
     font-size: 16px;

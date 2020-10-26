@@ -15,7 +15,6 @@ export const Container = styled.div`
 
 `;
 
-
 export const Row = styled.div`
     flex-flow: row;
     @media (min-width: 900px){
