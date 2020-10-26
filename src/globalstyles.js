@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-export const globalStyles = createGlobalStyle`
+export const GlobalStyles = createGlobalStyle`
     html, body{
         font-family: Calibri, 'Trebuchet MS', sans-serif;
         -webkit-font-smoothing: antialiased;

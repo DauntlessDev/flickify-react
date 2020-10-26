@@ -1,11 +1,11 @@
 import Home from "./pages/Home";
-import globalStyles from './globalstyles'
+import { GlobalStyles } from './globalstyles'
 import 'normalize.css';
 
 function App() {
   return (
     <>
-      <globalStyles />
+      <GlobalStyles />
       <Home />
     </>
   );
