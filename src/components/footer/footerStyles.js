@@ -74,10 +74,12 @@ export const Icon = styled.img`  width: 30px;
 
 export const IconContainer = styled.div`
     padding: 5px 7px;
-  
-background:white;
+    background:white;
     margin: 5px;
-    border-radius: 30px;
+    border-radius: 30px; 
+    &:hover {
+        cursor: pointer;
+    }
 `;
 
 export const TextSmall = styled.p`

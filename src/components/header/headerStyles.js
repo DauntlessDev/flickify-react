@@ -2,7 +2,8 @@ import styled from 'styled-components/macro'
 
 
 export const Container = styled.div`
-    background: #001839;
+    /* background: #001839; */
+    background: black;
     color: white;
     flex-flow: row nowrap;
     display: flex;
@@ -16,7 +17,8 @@ export const Group = styled.div`
 `;
 
 export const Logo = styled.img`
-    height: 50px;
+    height: 35px;
+    padding: 10px;
 `;
 
 export const TextLink = styled.p`
