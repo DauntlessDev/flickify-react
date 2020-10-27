@@ -12,8 +12,8 @@ export default function HeaderContainer() {
                 <Header.TextLink>Premium</Header.TextLink>
                 <Header.TextLink>Help</Header.TextLink>
                 <Header.TextLink>Download</Header.TextLink>
-                <Header.TextLink>Sign Up</Header.TextLink>
                 <Header.Line />
+                <Header.TextLink>Sign Up</Header.TextLink>
                 <Header.TextLink>Log In</Header.TextLink>
             </Header.Group>
         </Header.Container>

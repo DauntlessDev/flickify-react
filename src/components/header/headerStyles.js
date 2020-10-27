@@ -8,7 +8,7 @@ export const Container = styled.div`
     flex-flow: row nowrap;
     display: flex;
     justify-content: space-between;
-    padding: 0px 100px;
+    padding: 5px 140px;
 `;
 
 
@@ -23,17 +23,22 @@ export const Logo = styled.img`
 
 export const TextLink = styled.p`
     text-decoration: none;
-    margin: auto 17px;
-    font-size: 16px;
+    margin: auto 16px;
+    font-size: 17px;
     font-weight: ${({ active }) => (active === 'true' ? '500' : 'normal')};
     cursor: pointer;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+
 
     &:hover {
         font-weight: bold;
     }
 `;
 
-export const Line = styled.p`
+export const Line = styled.div`
+    margin: 5px 17px;
     width:1px;
+    height: 20px;
+    align-self: center;
     border-right: solid white 1px;
 `;
