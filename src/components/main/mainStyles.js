@@ -9,6 +9,7 @@ export const Container = styled.div`
     @media (max-width: 1100px) {
         ${({ dontShowOnSmallViewPort }) => dontShowOnSmallViewPort && `background: none;`}
     }
+
     `;
 
 
@@ -26,5 +27,9 @@ export const Button = styled.button`
         background-color: black;
         color: white;
         transition: 0.3;
+    }
+
+    @media (min-width: 1640px) {
+        display: none;
     }
     `;
