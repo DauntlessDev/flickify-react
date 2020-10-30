@@ -1,32 +1,20 @@
 import React from 'react'
 import FooterContainer from '../components/footer/FooterContainer'
-import * as Form from '../components/form/formStyles'
+import * as Form from '../components/auth/authStyles'
 import HeaderContainer from '../components/header/HeaderContainer'
-
+import SignUpContainer from '../components/auth/SignUpContainer';
 
 export default function SignUp() {
     return (<>
-
         <HeaderContainer />
         <Form.Container>
-            <Form.Base side='left'>
-                yo
-        </Form.Base>
-            <Form.Base side='right'>
-                <Form.Title>Create Account</Form.Title>
-                <Form.Input type="text" placeholder="Username" />
-                <Form.Input type="email" placeholder="Email Address" />
-                <Form.Input type="password" placeholder="Password" />
-                <Form.Input type="password" placeholder="Confirm Password" />
-                <Form.Text>Has an account? <Form.TextLink >
-                    Sign In now.</Form.TextLink>
-                </Form.Text>
-                <Form.SubText>This page is protected by Google reCAPTCHA to ensure you'are not a  bot. Learn More.
-                    </Form.SubText>
-                <Form.SubmitButton>Submit</Form.SubmitButton>
+            <Form.Base>
+                <SignUpContainer />
             </Form.Base>
+            <Form.SideBackground src="assets/background/side-background.png" />
         </Form.Container>
         <FooterContainer />
     </>
+
     )
 }

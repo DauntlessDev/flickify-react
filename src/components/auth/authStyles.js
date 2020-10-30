@@ -3,18 +3,25 @@ import styled from 'styled-components/macro'
 export const Container = styled.div`
     width: 100%;
     display: inline-flex;
+    flex-direction: row;
     background-color: gray;
-    height: 700px;
+    height: 680px;
+    color: black;
 `;
-
+export const SideBackground = styled.img`
+    height: 100%;
+`;
 export const Error = styled.div`
 
 `;
 export const Base = styled.div`
-    width: 50%;
-    background-color: rgb(4, 7, 68);
-    padding: 50px 100px;
-    margin: ${({ side }) => (side === 'left' ? '0 auto 0 0' : '0 0 0 auto')};
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    width: 100%;
+    background-color: white;
+    padding: 50px 150px;
 `;
 
 export const Title = styled.h1`
@@ -26,9 +33,7 @@ export const Title = styled.h1`
 export const Input = styled.input`
     display: block;
     padding: 10px;
-    margin: 30px 0;
-    background-color: gray;
-    color: white;
+    margin: 15px 0;
 `;
 
 
@@ -47,4 +52,5 @@ export const TextLink = styled.a`
 
 
 export const SubmitButton = styled.button`
+padding: 10px;
     `;
