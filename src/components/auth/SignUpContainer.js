@@ -4,6 +4,7 @@ import * as Form from './authStyles'
 export default function SignUpContainer() {
     return (<>
         <Form.Title>Create Account</Form.Title>
+        <Form.Error>Dev-note: due to usage of spotify api signing-up does not work.</Form.Error>
         <Form.Input type="text" placeholder="Username" />
         <Form.Input type="email" placeholder="Email Address" />
         <Form.Input type="password" placeholder="Password" />

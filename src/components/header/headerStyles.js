@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro'
+import { Link as ReactRouterLink } from 'react-router-dom';
 
 
 export const Container = styled.div`
@@ -16,12 +17,16 @@ export const Group = styled.div`
   display: inline-flex;
 `;
 
+export const LogoLink = styled(ReactRouterLink)`
+`;
+
 export const Logo = styled.img`
     height: 35px;
     padding: 10px;
 `;
 
-export const TextLink = styled.p`
+export const TextLink = styled(ReactRouterLink)`
+    color: white;
     text-decoration: none;
     margin: auto 16px;
     font-size: 17px;

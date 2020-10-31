@@ -12,6 +12,9 @@ export const SideBackground = styled.img`
     height: 100%;
 `;
 export const Error = styled.div`
+    background: darkslateblue;
+    color: white;
+    padding: 10px;
 
 `;
 export const Base = styled.div`
