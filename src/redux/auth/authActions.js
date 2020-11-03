@@ -4,6 +4,10 @@ export const fetchTokenSuccess = (token) => {
   return { type: TYPES.LOGIN_SUCCESS, payload: token };
 };
 
+export const fetchTokenFailure = (token) => {
+  return { type: TYPES.LOGIN_ERROR };
+};
+
 export const getTokenFromResponse = () => {
   return (dispatch) => {
     const token = window.location.hash
@@ -16,7 +20,13 @@ export const getTokenFromResponse = () => {
         return initial;
       }, {});
 
-    console.log("Current Auth Token:", token);
-    dispatch(fetchTokenSuccess(token));
+    console.log('authtoken === "" ', token.access_token);
+    console.log('token.access_token === "" ', token.access_token === "");
+
+    if (typeof token.access_token === "undefined") {
+      dispatch(fetchTokenFailure());
+    } else {
+      dispatch(fetchTokenSuccess(token));
+    }
   };
 };

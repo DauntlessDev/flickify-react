@@ -15,7 +15,7 @@ function App() {
     dispatch(getTokenFromResponse());
   }, []);
 
-  const authToken = useSelector((state) => state.auth.authToken);
+  const loggedIn = useSelector((state) => state.auth.loggedIn);
 
   return (
     <>
@@ -23,18 +23,18 @@ function App() {
       <Router>
         <Switch>
           <IsUserRedirect
-            user={authToken}
+            user={loggedIn}
             loggedInPath={ROUTES.BROWSE}
             exact
             path={ROUTES.HOME}
           >
             <Home />
           </IsUserRedirect>
-          <ProtectedRoute user={authToken} path={ROUTES.BROWSE}>
+          <ProtectedRoute user={loggedIn} path={ROUTES.BROWSE}>
             <Browse />
           </ProtectedRoute>
           <IsUserRedirect
-            user={authToken}
+            user={loggedIn}
             loggedInPath={ROUTES.BROWSE}
             exact
             path={ROUTES.SIGN_IN}
@@ -42,7 +42,7 @@ function App() {
             <SignIn />
           </IsUserRedirect>
           <IsUserRedirect
-            user={authToken}
+            user={loggedIn}
             loggedInPath={ROUTES.BROWSE}
             exact
             path={ROUTES.SIGN_UP}

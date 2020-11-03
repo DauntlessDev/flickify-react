@@ -1,7 +1,8 @@
 import * as TYPES from "./authTypes";
 
 const initState = {
-  authToken: {},
+  authToken: { "": undefined },
+  loggedIn: false,
 };
 
 const authReducer = (state = initState, action) => {
@@ -10,12 +11,17 @@ const authReducer = (state = initState, action) => {
       console.log("login success, token:", action.payload);
       return {
         ...state,
+        loggedIn: true,
         authToken: action.payload,
       };
 
+    case TYPES.LOGIN_ERROR:
+      console.log("login error");
+      return { ...state, loggedIn: false };
+
     case TYPES.SIGNOUT_SUCCESS:
       console.log("signout success");
-      return state;
+      return { ...state, loggedIn: false };
 
     default:
       return state;
