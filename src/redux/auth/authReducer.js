@@ -1,23 +1,16 @@
 import * as TYPES from "./authTypes";
 
 const initState = {
-  authError: null,
+  authToken: {},
 };
 
 const authReducer = (state = initState, action) => {
   switch (action.type) {
-    case TYPES.LOGIN_ERROR:
-      console.log("login error");
-      return {
-        ...state,
-        authError: "Login failed",
-      };
-
     case TYPES.LOGIN_SUCCESS:
-      console.log("login success");
+      console.log("login success, token:", action.payload);
       return {
         ...state,
-        authError: null,
+        authToken: action.payload,
       };
 
     case TYPES.SIGNOUT_SUCCESS:

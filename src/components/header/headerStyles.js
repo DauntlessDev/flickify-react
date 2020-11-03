@@ -36,6 +36,19 @@ export const TextLink = styled(ReactRouterLink)`
   }
 `;
 
+export const RedirectLink = styled.a`
+  color: white;
+  text-decoration: none;
+  margin: auto 16px;
+  font-size: 17px;
+  font-weight: ${({ active }) => (active === "true" ? "500" : "normal")};
+  cursor: pointer;
+  font-family: Calibri, "Trebuchet MS", sans-serif;
+
+  &:hover {
+    font-weight: bold;
+  }
+`;
 export const Line = styled.div`
   margin: 5px 17px;
   width: 1px;

@@ -1,30 +1,22 @@
 import * as TYPES from "./authTypes";
 
-export const signIn = (credentials) => {
-  return (dispatch, getState, { getFirebase }) => {
-    const firebase = getFirebase();
-
-    firebase
-      .auth()
-      .signInWithEmailAndPassword(credentials.email, credentials.password)
-      .then(() => {
-        dispatch({ type: TYPES.LOGIN_SUCCESS });
-      })
-      .catch((err) => {
-        dispatch({ type: TYPES.LOGIN_ERROR, err });
-      });
-  };
+export const fetchTokenSuccess = (token) => {
+  return { type: TYPES.LOGIN_SUCCESS, payload: token };
 };
 
-export const signOut = () => {
-  return (dispatch, getState, { getFirebase }) => {
-    const firebase = getFirebase();
+export const getTokenFromResponse = () => {
+  return (dispatch) => {
+    const token = window.location.hash
+      .substring(1)
+      .split("&")
+      .reduce((initial, item) => {
+        var parts = item.split("=");
+        initial[parts[0]] = decodeURIComponent(parts[1]);
 
-    firebase
-      .auth()
-      .signOut()
-      .then(() => {
-        dispatch({ type: TYPES.SIGNOUT_SUCCESS });
-      });
+        return initial;
+      }, {});
+
+    console.log("Current Auth Token:", token);
+    dispatch(fetchTokenSuccess(token));
   };
 };
