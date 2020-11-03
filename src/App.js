@@ -1,4 +1,3 @@
-import store from "./redux/store";
 import * as ROUTES from "./constants/routes";
 import { GlobalStyles } from "./globalstyles";
 import "normalize.css";
