@@ -1,6 +1,15 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import MainContainer from "../components/main/MainContainer";
+import SidebarContainer from "../components/sidebar/SidebarContainer";
+import * as Main from "../components/main/mainStyles";
 
 export default function Browse() {
-  return <div>browese</div>;
+  return (
+    <>
+      <Main.Container>
+        <SidebarContainer />
+        <MainContainer />
+      </Main.Container>
+    </>
+  );
 }
