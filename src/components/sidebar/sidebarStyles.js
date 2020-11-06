@@ -18,21 +18,34 @@ export const Break = styled.div`
 
 export const Group = styled.div``;
 
+export const SectionTitle = styled.p`
+  color: #fff;
+  font-size: 1em;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+  padding-left: 10px;
+`;
+
 export const SectionContainer = styled.div`
   padding: 10px 20px;
   margin: 0;
   width: 100%;
   display: inline-flex;
+  cursor: pointer;
+  color: white;
+
+  &:hover {
+    color: #278584;
+    transition: 250ms;
+
+    ${SectionTitle} {
+      color: #278584;
+      transition: 250ms;
+    }
+  }
 `;
 
-export const SectionTitle = styled.p`
-  color: #fff;
-  font-size: 1em;
-  font-weight: 800;
-  margin: 0;
-  padding: 0;
-  padding-left: 10px;
-`;
 export const Logo = styled.img`
   padding: 20px;
   padding-left: 20px;
@@ -49,6 +62,11 @@ export const SongContainer = styled.div`
   margin: 0;
   display: inline-flex;
   width: 100%;
+  cursor: pointer;
+
+  &:hover {
+    background: rgb(28, 38, 58);
+  }
 `;
 
 export const SongNumber = styled.div`
