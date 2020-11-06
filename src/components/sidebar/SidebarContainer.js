@@ -2,20 +2,56 @@ import React from "react";
 import * as SideBar from "./sidebarStyles";
 import SectionContainer from "./small-components/SectionContainer";
 import SongContainer from "./small-components/SongContainer";
+import HomeIcon from "@material-ui/icons/Home";
+import SearchIcon from "@material-ui/icons/Search";
+import LibraryMusicIcon from "@material-ui/icons/LibraryMusic";
+
 export default function SidebarContainer() {
+  let number = 0;
+
   return (
     <SideBar.Container>
-      <SideBar.Title>Playlist</SideBar.Title>
-      <SectionContainer title="My Playlist" />
-      <SectionContainer title="Last Listening" />
-      <SectionContainer title="Recommened" />
+      <SideBar.Logo src="assets/blue_logo.png" />
+      <SectionContainer icon={<HomeIcon />} title="Home" />
+      <SectionContainer icon={<SearchIcon />} title="Search" />
+      <SectionContainer icon={<LibraryMusicIcon />} title="Your Library" />
       <SideBar.Break />
-      <SongContainer title="Lips of an Angel" subtitle="lips ng anghel" />
-      <SongContainer title="Lips of an Angel" subtitle="lips ng anghel" />
-      <SongContainer title="Lips of an Angel" subtitle="lips ng anghel" />
-      <SongContainer title="Lips of an Angel" subtitle="lips ng anghel" />
-      <SongContainer title="Lips of an Angel" subtitle="lips ng anghel" />
-      <SongContainer title="Lips of an Angel" subtitle="lips ng anghel" />
+      <SongContainer
+        src="assets/images/sample_small_pic.JPG"
+        number={number}
+        title="Lips of an Angel"
+        subtitle="lips ng anghel"
+      />
+      <SongContainer
+        src="assets/images/sample_small_pic.JPG"
+        number={++number}
+        title="Lips of an Angel"
+        subtitle="lips ng anghel"
+      />
+      <SongContainer
+        src="assets/images/sample_small_pic.JPG"
+        number={++number}
+        title="Lips of an Angel"
+        subtitle="lips ng anghel"
+      />
+      <SongContainer
+        src="assets/images/sample_small_pic.JPG"
+        number={++number}
+        title="Lips of an Angel"
+        subtitle="lips ng anghel"
+      />
+      <SongContainer
+        src="assets/images/sample_small_pic.JPG"
+        number={++number}
+        title="Lips of an Angel"
+        subtitle="lips ng anghel"
+      />
+      <SongContainer
+        src="assets/images/sample_small_pic.JPG"
+        number={++number}
+        title="Lips of an Angel"
+        subtitle="lips ng anghel"
+      />
     </SideBar.Container>
   );
 }
