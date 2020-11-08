@@ -14,9 +14,7 @@ export default function MainContainer() {
         </Main.HeaderGroup>
         <Main.HeaderGroup>
           <Main.HeaderSearchBar />
-        </Main.HeaderGroup>
-        <Main.HeaderGroup>
-          <Main.HeaderProfile src="assets/images/sample_small_pic.JPG" />
+            <Main.HeaderProfile src="assets/images/sample_small_pic.JPG" />
         </Main.HeaderGroup>
       </Main.Header>
 
@@ -26,8 +24,8 @@ export default function MainContainer() {
           Flume walks us through his 'weird' mew album, 'Skin'. He has one goal,
           "I wanna make weird stuff".
         </Main.FeatureSmallText>
-        <Main.FeatureButtonPlay>Play</Main.FeatureButtonPlay>
-        <Main.FeatureButtonFollow>Follow</Main.FeatureButtonFollow>
+        <Main.FeatureButton>Play</Main.FeatureButton>
+        <Main.FeatureButton>Follow</Main.FeatureButton>
       </Main.Feature>
 
       <Main.Title>Popular Albums</Main.Title>
@@ -80,19 +78,6 @@ export default function MainContainer() {
       </Main.AlbumContainer>
       <Main.Title>Popular Artists</Main.Title>
       <Main.ArtistContainer>
-        {" "}
-        <ArtistContainer
-          src="assets/images/sample_small_pic.JPG"
-          name="Bruno Mars"
-        />
-        <ArtistContainer
-          src="assets/images/sample_small_pic.JPG"
-          name="Bruno Mars"
-        />
-        <ArtistContainer
-          src="assets/images/sample_small_pic.JPG"
-          name="Bruno Mars"
-        />
         <ArtistContainer
           src="assets/images/sample_small_pic.JPG"
           name="Bruno Mars"

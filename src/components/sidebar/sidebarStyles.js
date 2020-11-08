@@ -36,11 +36,11 @@ export const SectionContainer = styled.div`
   color: white;
 
   &:hover {
-    color: #278584;
+    color: #00cce6;
     transition: 250ms;
 
     ${SectionTitle} {
-      color: #278584;
+      color: #00cce6;
       transition: 250ms;
     }
   }

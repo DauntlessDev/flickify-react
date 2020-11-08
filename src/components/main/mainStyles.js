@@ -4,14 +4,17 @@ export const Container = styled.div`
   width: 100%;
   display: inline-flex;
   flex-direction: row;
-  height: 680px;
+  height: 660px;
   color: white;
+  padding-bottom: 30px;
 `;
 
 export const MainBar = styled.div`
-  background-color: #278584;
   width: 100%;
-  background-color: #0c1221;
+  background-color: #11254f;
+  background: url(${({ src }) =>
+      src ? `${src}` : "assets/background/browse-feature2.jpg"})
+    top left / cover no-repeat;
 `;
 
 export const Title = styled.h1`
@@ -21,36 +24,45 @@ export const Title = styled.h1`
 
 export const Header = styled.div`
   width: 100%;
-  background-color: #258587;
+  padding: 5px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
 export const HeaderGroup = styled.div`
-  display: inline;
+  justify-items: center;
+  display: flex;
+  align-items: center;
 `;
 export const HeaderProfile = styled.img`
-  width: 30px;
-  height: 30px;
-  padding: 5px;
-  margin-right: 40px;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 30px;
+  cursor: pointer;
 `;
+
 export const HeaderSearchBar = styled.input`
-  display: inline;
   width: 310px;
+  height: 25px;
+  background-color: rgba(255, 250, 250, 0.2);
+  border-radius: 30px;
+  color: white;
+  margin-right: 20px;
 `;
 export const HeaderTextLink = styled.p`
   padding: 15px 25px;
   font-weight: 600;
-  display: inline;
-  width: min-content;
+  cursor: pointer;
+
+  :hover {
+    color: #00cce6;
+  }
 `;
 
 export const Feature = styled.div`
-  background-color: #0c1221;
-  padding: 30px;
-  padding-top: 70px;
-  margin-bottom: 50px;
+  padding: 10px 30px 25px;
+  margin-bottom: 15px;
 `;
 export const FeatureLargeText = styled.p`
   margin: 0;
@@ -59,31 +71,39 @@ export const FeatureLargeText = styled.p`
 export const FeatureSmallText = styled.p`
   max-width: 360px;
 `;
-export const FeatureButtonPlay = styled.button`
-  margin-right: 20px;
-  width: 100px;
-  background-color: #00b7d6;
-  color: white;
-  padding: 4px;
-`;
-export const FeatureButtonFollow = styled.button`
-  width: 100px;
+
+export const FeatureButton = styled.button`
+  width: 120px;
   background-color: transparent;
   color: #00cce6;
   border: 1px solid #00cce6;
-  padding: 4px;
+  padding: 5px;
+  font-size: 15px;
+  cursor: pointer;
+
+  margin-right: 20px;
+  border-radius: 15px;
+
+  &:hover {
+    background-color: #00b7d6;
+    color: white;
+    border: none;
+  }
 `;
 
 export const AlbumContainer = styled.div`
   display: flex;
-  padding-left: 15px;
+  padding-left: 30px;
+  margin-bottom: 25px;
+  cursor: pointer;
 `;
 export const AlbumGroup = styled.div`
-  padding-left: 15px;
+  padding-right: 25px;
 `;
 export const AlbumPhoto = styled.img`
-  width: 120px;
-  height: 120px;
+  width: 110px;
+  height: 110px;
+  border-radius: 6px;
 `;
 export const AlbumTitle = styled.p`
   margin: 0;
@@ -99,17 +119,23 @@ export const AlbumSinger = styled.p`
 
 export const ArtistContainer = styled.div`
   display: flex;
-  padding-left: 10px;
+  padding-left: 30px;
 `;
 export const ArtistGroup = styled.div`
-  padding-left: 20px;
+  padding-right: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
+
+  &::last-child {
+    padding-right: 0;
+  }
 `;
 export const ArtistPhoto = styled.img`
   width: 60px;
   height: 60px;
+  border-radius: 30px;
 `;
 export const ArtistName = styled.p`
   font-size: 11px;
