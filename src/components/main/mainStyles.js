@@ -12,8 +12,7 @@ export const Container = styled.div`
 export const MainBar = styled.div`
   width: 100%;
   background-color: #11254f;
-  background: url(${({ src }) =>
-      src ? `${src}` : "assets/background/browse-feature2.jpg"})
+  background: url(${({ src }) => src ? `${src}` : "assets/background/browse-feature2.jpg"})
     top left / cover no-repeat;
 `;
 
