@@ -6,7 +6,6 @@ export const Container = styled.div`
   flex-direction: row;
   height: 660px;
   color: white;
-  padding-bottom: 30px;
 `;
 
 export const MainBar = styled.div`
