@@ -9,7 +9,7 @@ export const Container = styled.div`
   padding-bottom: 30px;
 `;
 
-export const Groups = styled.div``;
+export const Group = styled.div``;
 export const Button = styled.button``;
 
 export const CurrentSongContainer = styled.div``;
