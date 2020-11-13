@@ -75,7 +75,6 @@ export const SongNumber = styled.div`
   font-size: 13px;
   color: lightgray;
 `;
-
 export const SongStateLogo = styled.img`
   width: 10px;
 `;
