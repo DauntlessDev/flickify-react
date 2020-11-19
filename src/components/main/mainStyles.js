@@ -4,7 +4,7 @@ export const Container = styled.div`
   width: 100%;
   display: inline-flex;
   flex-direction: row;
-  height: 660px;
+  height: 700px;
   color: white;
 `;
 
@@ -96,7 +96,7 @@ export const AlbumContainer = styled.div`
   cursor: pointer;
 `;
 export const AlbumGroup = styled.div`
-  padding-right: 25px;
+  padding-right: 40px;
 `;
 export const AlbumPhoto = styled.img`
   width: 110px;
@@ -120,7 +120,7 @@ export const ArtistContainer = styled.div`
   padding-left: 30px;
 `;
 export const ArtistGroup = styled.div`
-  padding-right: 30px;
+  padding-right: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -137,4 +137,9 @@ export const ArtistPhoto = styled.img`
 `;
 export const ArtistName = styled.p`
   font-size: 11px;
+`;
+
+
+export const MainContainer = styled.div`
+  padding-left: 30px;
 `;

@@ -1,7 +1,7 @@
 import styled from "styled-components/macro";
 
 export const Container = styled.div`
-  width: 300px;
+  width: 370px;
   background-color: #101727;
 `;
 
@@ -9,7 +9,7 @@ export const Title = styled.h1`
   font-size: 1.3em;
   color: #fff;
   padding: 5px;
-  padding-left: 25px;
+  padding-left: 45px;
   font-weight: 900;
 `;
 export const Break = styled.div`
@@ -24,11 +24,11 @@ export const SectionTitle = styled.p`
   font-weight: 600;
   margin: 0;
   padding: 0;
-  padding-left: 10px;
+  padding-left: 20px;
 `;
 
 export const SectionContainer = styled.div`
-  padding: 10px 20px;
+  padding: 10px 40px;
   margin: 0;
   width: 100%;
   display: inline-flex;
@@ -48,7 +48,7 @@ export const SectionContainer = styled.div`
 
 export const Logo = styled.img`
   padding: 20px;
-  padding-left: 20px;
+  padding-left: 30px;
   height: 50px;
 `;
 export const SectionLogo = styled.div`
@@ -58,7 +58,7 @@ export const SectionLogo = styled.div`
 `;
 
 export const SongContainer = styled.div`
-  padding: 15px;
+  padding: 15px 30px;
   margin: 0;
   display: inline-flex;
   width: 100%;
