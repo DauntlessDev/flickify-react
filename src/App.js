@@ -19,8 +19,8 @@ function App() {
   return (
     <>
       <GlobalStyles />
-      <Browse />
-      {/* <Router>
+      {/* <Browse /> */}
+      <Router>
         <Switch>
           <IsUserRedirect
             user={loggedIn}
@@ -50,7 +50,7 @@ function App() {
             <SignUp />
           </IsUserRedirect>
         </Switch>
-      </Router> */}
+      </Router>
     </>
   );
 }

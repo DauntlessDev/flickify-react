@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import FooterContainer from "../components/footer/FooterContainer";
 import * as Form from "../components/auth/authStyles";
 import HeaderContainer from "../components/header/HeaderContainer";
@@ -12,7 +12,7 @@ export default function SignUp() {
         <Form.Base>
           <SignUpContainer />
         </Form.Base>
-        <Form.SideBackground src="assets/background/side-background.png" />
+        <Form.SideBackground />
       </Form.Container>
       <FooterContainer />
     </>

@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro'
 
 export const Container = styled.div`
-    height: 700px;
+    height: 655px;
     background: url(${({ src }) => (src ? `../assets/background/${src}.png` : '../assets/background/homeheader.png')}) top left / cover
     no-repeat;
 

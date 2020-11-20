@@ -9,6 +9,10 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 5px 140px;
+
+  @media (max-width: 1000px) {
+    padding: 5px 10px;
+  }
 `;
 
 export const Group = styled.div`
@@ -34,6 +38,11 @@ export const TextLink = styled(ReactRouterLink)`
   &:hover {
     font-weight: bold;
   }
+
+  @media (max-width: 700px) {
+    margin: auto 5px;
+    font-size: 15px;
+  }
 `;
 
 export const RedirectLink = styled.a`
@@ -48,6 +57,11 @@ export const RedirectLink = styled.a`
   &:hover {
     font-weight: bold;
   }
+
+  @media (max-width: 700px) {
+    margin: auto 5px;
+    font-size: 15px;
+  }
 `;
 export const Line = styled.div`
   margin: 5px 17px;
@@ -55,4 +69,5 @@ export const Line = styled.div`
   height: 20px;
   align-self: center;
   border-right: solid white 1px;
+
 `;

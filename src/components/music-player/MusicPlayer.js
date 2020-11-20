@@ -161,7 +161,7 @@ const options = {
   loadAudioErrorPlayNext: true,
 
   // Enable responsive player, auto toggle desktop and mobile [type `Boolean` default `true`]
-  responsive: true,
+  responsive: false,
 
   /**
    * Custom mobile media query string, eg use the mobile version UI on iPad.
