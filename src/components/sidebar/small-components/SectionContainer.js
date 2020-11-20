@@ -1,9 +1,9 @@
 import React from "react";
 import * as Sidebar from "../sidebarStyles";
 
-export default function SectionContainer({ icon, title }) {
+export default function SectionContainer({ icon, title, onClick }) {
   return (
-    <Sidebar.SectionContainer>
+    <Sidebar.SectionContainer onClick={onClick}>
       {icon}
       <Sidebar.SectionTitle>{title}</Sidebar.SectionTitle>
     </Sidebar.SectionContainer>

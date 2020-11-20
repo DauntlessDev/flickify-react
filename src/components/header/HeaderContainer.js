@@ -1,6 +1,5 @@
 import React from "react";
 import * as ROUTES from "../../constants/routes";
-import { Link as ReactRouterLink } from "react-router-dom";
 import * as Header from "./headerStyles";
 import { loginUrl } from "../../constants/spotify";
 

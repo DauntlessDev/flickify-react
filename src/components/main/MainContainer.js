@@ -2,7 +2,6 @@ import React from "react";
 import * as Main from "./mainStyles";
 import AlbumContainer from "./small-components/AlbumContainer";
 import ArtistContainer from "./small-components/ArtistContainer";
-import MainFeatureContainer from "./small-components/MainFeatureContainer";
 import MainHeaderContainer from "./small-components/MainHeaderContainer";
 
 export default function MainContainer() {
@@ -10,42 +9,70 @@ export default function MainContainer() {
     <Main.MainBar>
       <MainHeaderContainer />
       <Main.MainContainer>
-        <MainFeatureContainer />
+        {/* <MainFeatureContainer /> */}
         <Main.Title>Popular Albums</Main.Title>
         <Main.AlbumContainer>
           <AlbumContainer
             src="assets/images/sample_small_pic.JPG"
-            title="Children of Bodom"
+            title="Daily Mix"
             singer="Hacked"
           />
           <AlbumContainer
             src="assets/images/sample_small_pic.JPG"
-            title="Children of Bodom"
+            title="Daily Mix"
             singer="Hacked"
           />
           <AlbumContainer
             src="assets/images/sample_small_pic.JPG"
-            title="Children of Bodom"
+            title="Daily Mix"
             singer="Hacked"
           />
           <AlbumContainer
             src="assets/images/sample_small_pic.JPG"
-            title="Children of Bodom"
+            title="Daily Mix"
             singer="Hacked"
           />
           <AlbumContainer
             src="assets/images/sample_small_pic.JPG"
-            title="Children of Bodom"
+            title="Daily Mix"
             singer="Hacked"
           />
           <AlbumContainer
             src="assets/images/sample_small_pic.JPG"
-            title="Children of Bodom"
+            title="Daily Mix"
+            singer="Hacked"
+          />
+        </Main.AlbumContainer>
+        <Main.Title>Popular Albums</Main.Title>
+        <Main.AlbumContainer>
+          <AlbumContainer
+            src="assets/images/sample_small_pic.JPG"
+            title="Daily Mix"
             singer="Hacked"
           />
           <AlbumContainer
             src="assets/images/sample_small_pic.JPG"
-            title="Children of Bodom"
+            title="Daily Mix"
+            singer="Hacked"
+          />
+          <AlbumContainer
+            src="assets/images/sample_small_pic.JPG"
+            title="Daily Mix"
+            singer="Hacked"
+          />
+          <AlbumContainer
+            src="assets/images/sample_small_pic.JPG"
+            title="Daily Mix"
+            singer="Hacked"
+          />
+          <AlbumContainer
+            src="assets/images/sample_small_pic.JPG"
+            title="Daily Mix"
+            singer="Hacked"
+          />
+          <AlbumContainer
+            src="assets/images/sample_small_pic.JPG"
+            title="Daily Mix"
             singer="Hacked"
           />
         </Main.AlbumContainer>

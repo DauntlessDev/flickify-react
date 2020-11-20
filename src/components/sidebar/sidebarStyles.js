@@ -1,8 +1,12 @@
 import styled from "styled-components/macro";
 
 export const Container = styled.div`
-  width: 370px;
-  background-color: #101727;
+  width: 220px;
+  background-color: black;
+
+  @media (max-width: 860px) {
+    display: none;
+  }
 `;
 
 export const Title = styled.h1`
@@ -25,22 +29,23 @@ export const SectionTitle = styled.p`
   margin: 0;
   padding: 0;
   padding-left: 20px;
+  pointer-events: none;
 `;
 
 export const SectionContainer = styled.div`
   padding: 10px 40px;
   margin: 0;
-  width: 100%;
+  width: 200px;
   display: inline-flex;
   cursor: pointer;
   color: white;
 
   &:hover {
-    color: #00cce6;
+    color: #04bf7d;
     transition: 250ms;
 
     ${SectionTitle} {
-      color: #00cce6;
+      color: #04bf7d;
       transition: 250ms;
     }
   }
@@ -49,12 +54,14 @@ export const SectionContainer = styled.div`
 export const Logo = styled.img`
   padding: 20px;
   padding-left: 30px;
-  height: 50px;
+  height: 45px;
+  display: block;
 `;
 export const SectionLogo = styled.div`
   width: 10px;
   margin: 0;
   padding: 0;
+  pointer-events: none;
 `;
 
 export const SongContainer = styled.div`
@@ -65,7 +72,7 @@ export const SongContainer = styled.div`
   cursor: pointer;
 
   &:hover {
-    background: rgb(28, 38, 58);
+    background: #131f1b;
   }
 `;
 
