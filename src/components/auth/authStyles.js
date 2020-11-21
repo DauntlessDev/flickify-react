@@ -5,7 +5,7 @@ export const Container = styled.div`
   display: inline-flex;
   flex-direction: row;
   background-color: gray;
-  height: 650px;
+  height: 655px;
   color: black;
 `;
 export const SideBackground = styled.div`

@@ -1,11 +1,11 @@
-import * as TYPES from "./authTypes";
+import * as TYPES from "./apiTypes";
 
 const initState = {
   authToken: { "": undefined },
   loggedIn: false,
 };
 
-const authReducer = (state = initState, action) => {
+const apiReducer = (state = initState, action) => {
   switch (action.type) {
     case TYPES.LOGIN_SUCCESS:
       console.log("login success, token:", action.payload);
@@ -28,4 +28,4 @@ const authReducer = (state = initState, action) => {
   }
 };
 
-export default authReducer;
+export default apiReducer;

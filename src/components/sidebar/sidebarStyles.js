@@ -64,43 +64,23 @@ export const SectionLogo = styled.div`
   pointer-events: none;
 `;
 
-export const SongContainer = styled.div`
-  padding: 15px 30px;
-  margin: 0;
-  display: inline-flex;
-  width: 100%;
-  cursor: pointer;
-
-  &:hover {
-    background: #131f1b;
-  }
+export const PlaylistTitle = styled.h1`
+  text-transform: uppercase;
+  color: gray;
+  font-weight: 600;
+  font-size:14px;
+  letter-spacing: 1.2px;
+  padding: 10px 40px 0;
 `;
 
-export const SongNumber = styled.div`
-  padding: 10px;
-  margin-right: 10px;
-  font-size: 13px;
-  color: lightgray;
-`;
-export const SongStateLogo = styled.img`
-  width: 10px;
+export const PlaylistDivider = styled.div`
+  border-bottom: 1px solid gray;
+  margin: 0 40px;
 `;
 
-export const SongPicture = styled.img`
-  width: 35px;
-  height: 35px;
-  padding-right: 10px;
-`;
-
-export const SongTitle = styled.p`
-  font-size: 0.9em;
-  color: white;
-  font-weight: bold;
-  margin: 0;
-`;
-
-export const SongSubTitle = styled.p`
-  font-size: 0.7em;
-  color: darkgray;
-  margin: 0;
+export const PlaylistItem = styled.p`
+  color: gray;
+  font-weight: 500;
+  font-size:14px;
+  padding: 0 40px;
 `;

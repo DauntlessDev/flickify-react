@@ -1,4 +1,7 @@
-import * as TYPES from "./authTypes";
+import * as TYPES from "./apiTypes";
+import SpotifyWebApi from "spotify-web-api-js";
+
+const spotify = new SpotifyWebApi();
 
 export const fetchTokenSuccess = (token) => {
   return { type: TYPES.LOGIN_SUCCESS, payload: token };
@@ -25,8 +28,15 @@ export const getTokenFromResponse = () => {
 
     if (typeof token.access_token === "undefined") {
       dispatch(fetchTokenFailure());
+      spotify.setAccessToken(null);
     } else {
       dispatch(fetchTokenSuccess(token));
+
+      spotify.setAccessToken(token);
+      console.log('im')
+      spotify.getMe().then((user) => {
+        console.log("current user:", user);
+      });
     }
   };
 };

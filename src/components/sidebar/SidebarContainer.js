@@ -9,6 +9,14 @@ import { searchContext } from "../../context/searchContext";
 
 export default function SidebarContainer() {
   const { showPlayer, setShowPlayer } = useContext(searchContext);
+
+  const data = [
+    { name: "Playlist1" },
+    { name: "Playlist2" },
+    { name: "Playlist3" },
+    { name: "Playlist4" },
+    { name: "Playlist5" },
+  ];
   return (
     <SideBar.Container>
       <SideBar.Logo src="assets/logo.png" />
@@ -22,7 +30,12 @@ export default function SidebarContainer() {
         title="Search"
       />
       <SectionContainer icon={<LibraryMusicIcon />} title="Your Library" />
-      {/* <SideBar.Break /> */}
+      <SideBar.Break />
+      <SideBar.PlaylistTitle>Playlist</SideBar.PlaylistTitle>
+      <SideBar.PlaylistDivider />
+      {data.map((item, idx) => (
+        <SideBar.PlaylistItem key={idx}>{item.name}</SideBar.PlaylistItem>
+      ))}
     </SideBar.Container>
   );
 }

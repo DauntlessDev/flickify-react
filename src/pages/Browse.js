@@ -17,7 +17,7 @@ export default function Browse() {
           <MainContainer />
         </Main.Container>
       </searchContext.Provider>
-      <MusicPlayer />
+      {/* <MusicPlayer /> */}
     </>
   );
 }
