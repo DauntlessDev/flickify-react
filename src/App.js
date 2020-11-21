@@ -7,14 +7,13 @@ import { useEffect } from "react";
 import { SignUp, Home, Browse } from "./pages";
 import { getTokenFromResponse } from "./redux/api/apiActions";
 import { useDispatch, useSelector } from "react-redux";
-
 function App() {
   const dispatch = useDispatch();
+  const loggedIn = useSelector((state) => state.api.loggedIn);
+
   useEffect(() => {
     dispatch(getTokenFromResponse());
   }, []);
-
-  const loggedIn = useSelector((state) => state.api.loggedIn);
 
   return (
     <>
