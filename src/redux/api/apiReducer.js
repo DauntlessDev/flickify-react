@@ -3,7 +3,12 @@ import * as TYPES from "./apiTypes";
 const initState = {
   authToken: { "": undefined },
   loggedIn: false,
+  user: { images: [{}] },
   myPlaylist: [],
+  recentlyPlayed: [],
+  newReleases: [],
+  topTracks: [],
+  artists: [],
 };
 
 const apiReducer = (state = initState, action) => {
@@ -15,20 +20,49 @@ const apiReducer = (state = initState, action) => {
         loggedIn: true,
         authToken: action.payload,
       };
+    case TYPES.LOGIN_ERROR:
+      console.log("login error");
+      return { ...state, loggedIn: false };
+    case TYPES.SIGNOUT_SUCCESS:
+      console.log("signout success");
+      return { ...state, loggedIn: false };
+    case TYPES.SET_USER:
+      console.log("user info:", action.payload);
+      return {
+        ...state,
+        user: action.payload,
+      };
     case TYPES.SET_MYPLAYLIST:
       console.log("my playlist:", action.payload);
       return {
         ...state,
         myPlaylist: action.payload,
       };
-    case TYPES.LOGIN_ERROR:
-      console.log("login error");
-      return { ...state, loggedIn: false };
+    case TYPES.SET_RECENTLY_PLAYED:
+      console.log("my recently played:", action.payload);
+      return {
+        ...state,
+        recentlyPlayed: action.payload,
+      };
 
-    case TYPES.SIGNOUT_SUCCESS:
-      console.log("signout success");
-      return { ...state, loggedIn: false };
-
+    case TYPES.SET_NEW_RELEASES_BROWSE:
+      console.log("my new releases:", action.payload);
+      return {
+        ...state,
+        newReleases: action.payload,
+      };
+    case TYPES.SET_TOP_TRACKS:
+      console.log("my top tracks:", action.payload);
+      return {
+        ...state,
+        topTracks: action.payload,
+      };
+    case TYPES.SET_TOP_ARTISTS_BROWSE:
+      console.log("artists:", action.payload);
+      return {
+        ...state,
+        artists: action.payload,
+      };
     default:
       return state;
   }

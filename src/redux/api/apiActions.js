@@ -23,12 +23,12 @@ export const setNewReleases = (newReleases) => {
   return { type: TYPES.SET_NEW_RELEASES_BROWSE, payload: newReleases };
 };
 
-export const setRecommendations = (recommendations) => {
-  return { type: TYPES.SET_RECOMMENDATIONS_BROWSE, payload: recommendations };
-};
-
 export const setRecentlyPlayed = (recentlyPlayed) => {
   return { type: TYPES.SET_RECENTLY_PLAYED, payload: recentlyPlayed };
+};
+
+export const setTopTracks = (topTracks) => {
+  return { type: TYPES.SET_TOP_TRACKS, payload: topTracks };
 };
 
 export const setArtists = (artists) => {
@@ -62,6 +62,7 @@ export const getTokenFromResponse = () => {
         s.getMe()
           .then((user) => {
             console.log("user", user);
+            dispatch(setUserInfo(user));
           })
           .catch(() => {
             console.log("error in user");
@@ -76,12 +77,40 @@ export const getTokenFromResponse = () => {
             console.log("error in userplaylist");
           });
 
-        s.searchTracks("Love")
-          .then((data) => {
-            console.log('Search by "Love"', data);
+        s.getMyRecentlyPlayedTracks()
+          .then((recently) => {
+            console.log("recently", recently);
+            dispatch(setRecentlyPlayed(recently.items));
           })
           .catch(() => {
-            console.log("error in love");
+            console.log("error in recently");
+          });
+
+        s.getNewReleases()
+          .then((release) => {
+            console.log("new release", release);
+            dispatch(setNewReleases(release.albums.items));
+          })
+          .catch(() => {
+            console.log("error in new releases");
+          });
+
+        s.getMyTopTracks()
+          .then((topTracks) => {
+            console.log("toptracks", topTracks);
+            dispatch(setTopTracks(topTracks.items));
+          })
+          .catch(() => {
+            console.log("error in topTracks");
+          });
+
+        s.getArtistRelatedArtists("4DAcJXcjX0zlQAZAPAx4Zb")
+          .then((data) => {
+            console.log("artist", data);
+            dispatch(setArtists(data.artists));
+          })
+          .catch(() => {
+            console.log("error in artist");
           });
       }
 

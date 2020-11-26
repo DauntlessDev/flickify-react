@@ -6,6 +6,7 @@ export default function ArtistContainer({ name, src }) {
     <Main.ArtistGroup>
       <Main.ArtistPhoto src={src} />
       <Main.ArtistName>{name}</Main.ArtistName>
+      <Main.ArtistPosition>Artist</Main.ArtistPosition>
     </Main.ArtistGroup>
   );
 }
