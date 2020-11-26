@@ -3,6 +3,7 @@ import * as TYPES from "./apiTypes";
 const initState = {
   authToken: { "": undefined },
   loggedIn: false,
+  myPlaylist: [],
 };
 
 const apiReducer = (state = initState, action) => {
@@ -14,7 +15,12 @@ const apiReducer = (state = initState, action) => {
         loggedIn: true,
         authToken: action.payload,
       };
-
+    case TYPES.SET_MYPLAYLIST:
+      console.log("my playlist:", action.payload);
+      return {
+        ...state,
+        myPlaylist: action.payload,
+      };
     case TYPES.LOGIN_ERROR:
       console.log("login error");
       return { ...state, loggedIn: false };

@@ -18,15 +18,19 @@ export const setUserInfo = (user) => {
 export const setMyPlaylist = (myPlaylist) => {
   return { type: TYPES.SET_MYPLAYLIST, payload: myPlaylist };
 };
+
 export const setNewReleases = (newReleases) => {
   return { type: TYPES.SET_NEW_RELEASES_BROWSE, payload: newReleases };
 };
+
 export const setRecommendations = (recommendations) => {
   return { type: TYPES.SET_RECOMMENDATIONS_BROWSE, payload: recommendations };
 };
+
 export const setRecentlyPlayed = (recentlyPlayed) => {
   return { type: TYPES.SET_RECENTLY_PLAYED, payload: recentlyPlayed };
 };
+
 export const setArtists = (artists) => {
   return { type: TYPES.SET_TOP_ARTISTS_BROWSE, payload: artists };
 };
@@ -55,9 +59,30 @@ export const getTokenFromResponse = () => {
 
       if (token) {
         s.setAccessToken(token.access_token);
-        s.getMe().then((user) => {
-          console.log("user", user);
-        });
+        s.getMe()
+          .then((user) => {
+            console.log("user", user);
+          })
+          .catch(() => {
+            console.log("error in user");
+          });
+
+        s.getUserPlaylists()
+          .then((playlist) => {
+            console.log("userplaylist", playlist);
+            dispatch(setMyPlaylist(playlist.items));
+          })
+          .catch(() => {
+            console.log("error in userplaylist");
+          });
+
+        s.searchTracks("Love")
+          .then((data) => {
+            console.log('Search by "Love"', data);
+          })
+          .catch(() => {
+            console.log("error in love");
+          });
       }
 
       window.location.hash = "";

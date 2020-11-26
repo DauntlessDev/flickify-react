@@ -6,17 +6,12 @@ import SearchIcon from "@material-ui/icons/Search";
 import LibraryMusicIcon from "@material-ui/icons/LibraryMusic";
 import { useContext } from "react";
 import { searchContext } from "../../context/searchContext";
+import { useSelector } from "react-redux";
 
 export default function SidebarContainer() {
   const { showPlayer, setShowPlayer } = useContext(searchContext);
+  const myPlaylist = useSelector((state) => state.api.myPlaylist);
 
-  const data = [
-    { name: "Playlist1" },
-    { name: "Playlist2" },
-    { name: "Playlist3" },
-    { name: "Playlist4" },
-    { name: "Playlist5" },
-  ];
   return (
     <SideBar.Container>
       <SideBar.Logo src="assets/logo.png" />
@@ -33,7 +28,7 @@ export default function SidebarContainer() {
       <SideBar.Break />
       <SideBar.PlaylistTitle>Playlist</SideBar.PlaylistTitle>
       <SideBar.PlaylistDivider />
-      {data.map((item, idx) => (
+      {myPlaylist.map((item, idx) => (
         <SideBar.PlaylistItem key={idx}>{item.name}</SideBar.PlaylistItem>
       ))}
     </SideBar.Container>
