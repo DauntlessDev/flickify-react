@@ -1,19 +1,20 @@
 import React from "react";
 import { useContext } from "react";
 import { searchContext } from "../../../context/searchContext";
-import DetailsRoundedIcon from "@material-ui/icons/DetailsRounded";
-import ChangeHistoryRoundedIcon from "@material-ui/icons/ChangeHistoryRounded";
+import ExpandMore from "@material-ui/icons/ExpandMore";
+import ExpandLess from "@material-ui/icons/ExpandLess";
 import * as Main from "../mainStyles";
 import { useState } from "react";
 
 export default function MainHeaderContainer({ userProfile, userName }) {
   const { showPlayer } = useContext(searchContext);
-  const { clickedProfile, setclickedProfile } = useState(false);
+  const { clickedProfile, setClickedProfile } = useState(false);
 
   const style = {
     profileSymbol: {
-      width: 15,
-      height: 15,
+      width: 18,
+      height: 18,
+      padding: 5,
     },
   };
 
@@ -28,9 +29,9 @@ export default function MainHeaderContainer({ userProfile, userName }) {
           <Main.HeaderProfileName>{userName}</Main.HeaderProfileName>
           <Main.HeaderProfileSymbol>
             {clickedProfile ? (
-              <DetailsRoundedIcon style={style.profileSymbol} />
+              <ExpandLess style={style.profileSymbol} />
             ) : (
-              <ChangeHistoryRoundedIcon style={style.profileSymbol} />
+              <ExpandMore style={style.profileSymbol} />
             )}
           </Main.HeaderProfileSymbol>
         </Main.HeaderProfileContainer>

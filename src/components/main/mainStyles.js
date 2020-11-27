@@ -12,7 +12,9 @@ export const MainBar = styled.div`
   width: 100%;
   background-color: #04bf7d;
   background: url(${({ src }) =>  src ? `${src}` : "assets/background/browse-feature1.png"})
-    top left / cover no-repeat;
+    center / cover no-repeat ;
+
+
 `;
 
 export const Title = styled.h1`
@@ -64,7 +66,7 @@ export const HeaderProfile = styled.img`
 `;
 
 export const HeaderProfileName = styled.p`
-  padding: 0 8px;
+  padding: 0 0px 0 8px;
   margin: 0;
   font-weight: bold;
   font-size: 15px;
@@ -75,7 +77,7 @@ export const HeaderProfileSymbol= styled.div`
 `
 
 export const HeaderSearchBar = styled.input`
-  background-color: rgba(255, 250, 250, 0.2);
+  background-color: rgba(0, 0, 0, 0.4);
   color: white;
   transition: width 0.5s;
   height: 25px;
@@ -136,21 +138,32 @@ export const AlbumContainer = styled.div`
   padding-left: 30px;
   margin-bottom: 25px;
   cursor: pointer;
-  max-width: 100%;
+  
 `;
 export const AlbumGroup = styled.div`
   margin-right: 25px;
   padding: 15px;
   background-color: #0f0e0e;
   border-radius: 5px;
+  width: 150px;
+  height: 220px;
 
   &:hover {
     background-color: #282828;
+  } 
+
+  &::first-child{ 
+    background: red;
+  }
+  
+  @media (max-width: 700px) {
+    width: 100px;
+    height: 170px;
   }
 `;
 export const AlbumPhoto = styled.img`
-  max-width: 150px;
-  max-height: 150px;
+  width: 150px;
+  height: 150px;
   border-radius: 5px;
 
   @media (max-width: 700px) {
@@ -178,9 +191,11 @@ export const ArtistContainer = styled.div`
 export const ArtistGroup = styled.div`
   margin-top: 15px;
   margin-right: 25px;
-  padding: 20px;
+  padding: 15px;
   background-color: #0f0e0e;
   border-radius: 5px;
+  width: 150px;
+  height: 220px;
 
   &:hover {
     background-color: #282828;
@@ -191,6 +206,12 @@ export const ArtistGroup = styled.div`
   &::last-child {
     padding-right: 0;
   }
+  
+  @media (max-width: 700px) {
+    width: 100px;
+    height: 170px;
+  }
+
 `;
 export const ArtistPhoto = styled.img`
   width: 140px;
@@ -199,8 +220,8 @@ export const ArtistPhoto = styled.img`
   object-fit: cover;
 
   @media (max-width: 700px) {
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
   }
 `;
 export const ArtistName = styled.p`
