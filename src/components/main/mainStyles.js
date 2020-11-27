@@ -167,8 +167,8 @@ export const AlbumPhoto = styled.img`
   border-radius: 5px;
 
   @media (max-width: 700px) {
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
   }
 `;
 export const AlbumTitle = styled.p`
@@ -214,14 +214,14 @@ export const ArtistGroup = styled.div`
 
 `;
 export const ArtistPhoto = styled.img`
-  width: 140px;
-  height: 140px;
+  width: 150px;
+  height: 150px;
   border-radius: 80px;
   object-fit: cover;
 
   @media (max-width: 700px) {
-    width: 70px;
-    height: 70px;
+    width: 100px;
+    height: 100px;
   }
 `;
 export const ArtistName = styled.p`
