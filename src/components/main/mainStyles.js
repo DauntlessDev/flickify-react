@@ -42,14 +42,37 @@ export const HeaderGroup = styled.div`
   display: flex;
   align-items: center;
 `;
-export const HeaderProfile = styled.img`
-  width: 40px;
-  height: 40px;
+
+export const HeaderProfileContainer = styled.div`
+  display: inline-flex;
+  align-items: center;
   margin: 10px;
   margin-right: 15px;
   border-radius: 30px;
+  background: black;
   cursor: pointer;
+
+  &:hover{
+    background-color: #282828;
+  } 
+`
+
+export const HeaderProfile = styled.img`
+  width: 35px;
+  height: 35px;
+  border-radius: 30px;
 `;
+
+export const HeaderProfileName = styled.p`
+  padding: 0 8px;
+  margin: 0;
+  font-weight: bold;
+  font-size: 15px;
+`
+
+export const HeaderProfileSymbol= styled.div`
+  padding-right: 8px;
+`
 
 export const HeaderSearchBar = styled.input`
   background-color: rgba(255, 250, 250, 0.2);

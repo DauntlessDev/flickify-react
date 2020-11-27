@@ -13,7 +13,7 @@ export default function MainContainer() {
   const artists = useSelector((state) => state.api.artists);
   return (
     <Main.MainBar>
-      <MainHeaderContainer userProfile={user.images[0].url} />
+      <MainHeaderContainer userProfile={user.images[0].url} userName={user.display_name}  />
       <Main.MainContainer>
         {/* <MainFeatureContainer /> */}
         <Main.Title>Recently Played</Main.Title>

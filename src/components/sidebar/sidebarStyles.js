@@ -1,7 +1,7 @@
 import styled from "styled-components/macro";
 
 export const Container = styled.div`
-  width: 220px;
+  width: 235px;
   background-color: black;
 
   @media (max-width: 860px) {
