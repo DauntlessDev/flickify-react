@@ -5,10 +5,11 @@ import ExpandMore from "@material-ui/icons/ExpandMore";
 import ExpandLess from "@material-ui/icons/ExpandLess";
 import * as Main from "../mainStyles";
 import { useState } from "react";
+import ReactDOM from "react-dom";
 
 export default function MainHeaderContainer({ userProfile, userName }) {
   const { showPlayer } = useContext(searchContext);
-  const { clickedProfile, setClickedProfile } = useState(false);
+  const [clickedProfile, setClickedProfile] = useState(false);
 
   const style = {
     profileSymbol: {
@@ -24,7 +25,11 @@ export default function MainHeaderContainer({ userProfile, userName }) {
         <Main.HeaderSearchBar active={showPlayer} />
       </Main.HeaderGroup>
       <Main.HeaderGroup>
-        <Main.HeaderProfileContainer>
+        <Main.HeaderProfileContainer
+          onClick={() => {
+            setClickedProfile(!clickedProfile);
+          }}
+        >
           <Main.HeaderProfile src={userProfile} />
           <Main.HeaderProfileName>{userName}</Main.HeaderProfileName>
           <Main.HeaderProfileSymbol>
@@ -35,6 +40,13 @@ export default function MainHeaderContainer({ userProfile, userName }) {
             )}
           </Main.HeaderProfileSymbol>
         </Main.HeaderProfileContainer>
+        {clickedProfile ? (
+          <Main.HeaderDropDown>
+            <Main.HeaderDropDownOptions onClick={() => {}}>
+              Sign out
+            </Main.HeaderDropDownOptions>
+          </Main.HeaderDropDown>
+        ) : null}
       </Main.HeaderGroup>
     </Main.Header>
   );

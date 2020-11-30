@@ -11,10 +11,8 @@ export const Container = styled.div`
 export const MainBar = styled.div`
   width: 100%;
   background-color: #04bf7d;
-  background: url(${({ src }) =>  src ? `${src}` : "assets/background/browse-feature1.png"})
-    center / cover no-repeat ;
-
-
+  background: url(${({ src }) => src ? `${src}` : "assets/background/browse-feature1.png"})
+    center / cover no-repeat;
 `;
 
 export const Title = styled.h1`
@@ -38,6 +36,10 @@ export const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  top: 0;
+  left: 0;
+  position: relative-fixed;
+  
 `;
 export const HeaderGroup = styled.div`
   justify-items: center;
@@ -54,10 +56,11 @@ export const HeaderProfileContainer = styled.div`
   background: black;
   cursor: pointer;
 
-  &:hover{
+
+  &:hover {
     background-color: #282828;
-  } 
-`
+  }
+`;
 
 export const HeaderProfile = styled.img`
   width: 35px;
@@ -70,11 +73,36 @@ export const HeaderProfileName = styled.p`
   margin: 0;
   font-weight: bold;
   font-size: 15px;
-`
+`;
 
-export const HeaderProfileSymbol= styled.div`
+export const HeaderProfileSymbol = styled.div`
   padding-right: 8px;
-`
+`;
+
+export const HeaderDropDown = styled.div`
+  background-color: black;
+  border-radius: 5px;
+  top: 55px;
+  right: 20px;
+  padding: 2px;
+  position: fixed;
+`;
+
+export const HeaderDropDownOptions = styled.button`
+  padding: 8px 12px;
+  margin: 1px;
+  width: 150px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  color: lightgray;
+  background-color: black;
+  text-align: left;
+
+  &:hover {
+    background-color: #282828;
+  }
+`;
 
 export const HeaderSearchBar = styled.input`
   background-color: rgba(0, 0, 0, 0.4);
@@ -138,7 +166,6 @@ export const AlbumContainer = styled.div`
   padding-left: 30px;
   margin-bottom: 25px;
   cursor: pointer;
-  
 `;
 export const AlbumGroup = styled.div`
   margin-right: 25px;
@@ -150,12 +177,12 @@ export const AlbumGroup = styled.div`
 
   &:hover {
     background-color: #282828;
-  } 
+  }
 
-  &::first-child{ 
+  &::first-child {
     background: red;
   }
-  
+
   @media (max-width: 700px) {
     width: 100px;
     height: 170px;
@@ -206,12 +233,11 @@ export const ArtistGroup = styled.div`
   &::last-child {
     padding-right: 0;
   }
-  
+
   @media (max-width: 700px) {
     width: 100px;
     height: 170px;
   }
-
 `;
 export const ArtistPhoto = styled.img`
   width: 150px;

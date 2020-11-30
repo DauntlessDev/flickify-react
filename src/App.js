@@ -42,6 +42,7 @@ function App() {
           </IsUserRedirect>
         </Switch>
       </Router>
+      <div id="header-dropdown"/>
     </>
   );
 }

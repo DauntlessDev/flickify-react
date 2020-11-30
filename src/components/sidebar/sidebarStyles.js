@@ -7,6 +7,7 @@ export const Container = styled.div`
   @media (max-width: 860px) {
     display: none;
   }
+
 `;
 
 export const Title = styled.h1`
