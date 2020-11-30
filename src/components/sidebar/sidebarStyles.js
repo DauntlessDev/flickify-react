@@ -2,10 +2,14 @@ import styled from "styled-components/macro";
 
 export const Container = styled.div`
   width: 235px;
+  height: 100%;
   background-color: black;
+  position: fixed;
+  float: left;
+  z-index: 1;
 
-  @media (max-width: 860px) {
-    display: none;
+  @media (max-width: 700px) {
+    display:none;
   }
 
 `;

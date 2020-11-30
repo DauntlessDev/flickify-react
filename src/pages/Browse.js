@@ -12,10 +12,8 @@ export default function Browse() {
   return (
     <>
       <searchContext.Provider value={{ showPlayer, setShowPlayer }}>
-        <Main.Container>
-          <SidebarContainer />
-          <MainContainer />
-        </Main.Container>
+        <SidebarContainer />
+        <MainContainer />
       </searchContext.Provider>
       {/* <MusicPlayer /> */}
     </>

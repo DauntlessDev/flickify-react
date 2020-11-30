@@ -1,18 +1,27 @@
 import styled from "styled-components/macro";
 
 export const Container = styled.div`
-  width: 100%;
+  max-width: 100%;
+  float: right;
   display: inline-flex;
   flex-direction: row;
   /* height: 700px;  */
   color: white;
+  position: relative;
+
+  @media (max-width: 700px){
+    width: 100%;
+  }
+
+
 `;
 
 export const MainBar = styled.div`
-  width: 100%;
+width: 100%;
   background-color: #04bf7d;
-  background: url(${({ src }) => src ? `${src}` : "assets/background/browse-feature1.png"})
+  background: url(${({ src }) =>src ? `${src}` : "assets/background/browse-feature1.png"})
     center / cover no-repeat;
+  padding: 50px 0px;
 `;
 
 export const Title = styled.h1`
@@ -37,9 +46,9 @@ export const Header = styled.div`
   justify-content: space-between;
   align-items: center;
   top: 0;
-  left: 0;
-  position: relative-fixed;
-  
+  right: 0;
+  z-index: 1;
+  position: fixed;
 `;
 export const HeaderGroup = styled.div`
   justify-items: center;
@@ -55,7 +64,6 @@ export const HeaderProfileContainer = styled.div`
   border-radius: 30px;
   background: black;
   cursor: pointer;
-
 
   &:hover {
     background-color: #282828;
@@ -112,6 +120,7 @@ export const HeaderSearchBar = styled.input`
   font-size: 14px;
   border-radius: 30px;
   margin-left: ${({ active }) => (active === true ? "25px" : "0")};
+  margin-right: ${({ active }) => (active === true ? "25px" : "0")};
   padding: ${({ active }) => (active === true ? "0 10px" : "0")};
   opacity: ${({ active }) => (active === true ? "1" : "0")};
   width: ${({ active }) => (active === true ? "200px" : "0px")};
@@ -167,36 +176,13 @@ export const AlbumContainer = styled.div`
   margin-bottom: 25px;
   cursor: pointer;
 `;
-export const AlbumGroup = styled.div`
-  margin-right: 25px;
-  padding: 15px;
-  background-color: #0f0e0e;
-  border-radius: 5px;
-  width: 150px;
-  height: 220px;
 
-  &:hover {
-    background-color: #282828;
-  }
-
-  &::first-child {
-    background: red;
-  }
-
-  @media (max-width: 700px) {
-    width: 100px;
-    height: 170px;
-  }
-`;
 export const AlbumPhoto = styled.img`
   width: 150px;
-  height: 150px;
+  max-width: 100%
+  ;max-height: 80%;
   border-radius: 5px;
 
-  @media (max-width: 700px) {
-    width: 100px;
-    height: 100px;
-  }
 `;
 export const AlbumTitle = styled.p`
   margin: 0;
@@ -211,11 +197,7 @@ export const AlbumSinger = styled.p`
   font-weight: 500;
 `;
 
-export const ArtistContainer = styled.div`
-  display: flex;
-  padding-left: 30px;
-`;
-export const ArtistGroup = styled.div`
+export const CardGroup = styled.div`
   margin-top: 15px;
   margin-right: 25px;
   padding: 15px;
@@ -233,22 +215,40 @@ export const ArtistGroup = styled.div`
   &::last-child {
     padding-right: 0;
   }
+  @media (max-width: 1280px) {
+    width: 130px;
+    height: 190px;
+  }
 
-  @media (max-width: 700px) {
+  @media (max-width: 1000px) {
     width: 100px;
     height: 170px;
   }
+  
+  @media (max-width: 750px) {
+    width: 90px;
+    height: 155px;
+  }
+  @media (max-width: 700px) {
+    width: 150px;
+    height: 220px;
+  }
+  @media (max-width: 400px) {
+    width: 80px;
+    height: 140px;
+  }
+  
+`;
+
+export const ArtistContainer = styled.div`
+  display: flex;
+  padding-left: 30px;
 `;
 export const ArtistPhoto = styled.img`
-  width: 150px;
-  height: 150px;
+  width: 100%;
   border-radius: 80px;
   object-fit: cover;
 
-  @media (max-width: 700px) {
-    width: 100px;
-    height: 100px;
-  }
 `;
 export const ArtistName = styled.p`
   font-weight: 600;
