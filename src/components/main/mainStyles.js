@@ -1,4 +1,5 @@
 import styled from "styled-components/macro";
+import { Link as ReactRouterLink } from "react-router-dom";
 
 export const Container = styled.div`
   max-width: 100%;
@@ -90,22 +91,24 @@ export const HeaderProfileSymbol = styled.div`
 export const HeaderDropDown = styled.div`
   background-color: black;
   border-radius: 5px;
-  top: 55px;
+  top: 56px;
   right: 20px;
   padding: 2px;
   position: fixed;
+
 `;
 
-export const HeaderDropDownOptions = styled.button`
+export const HeaderDropDownOptions = styled.p`
+  cursor: pointer;
   padding: 8px 12px;
   margin: 1px;
-  width: 150px;
   font-size: 14px;
   font-weight: 500;
   border: none;
   color: lightgray;
   background-color: black;
   text-align: left;
+  width: 100px;
 
   &:hover {
     background-color: #282828;

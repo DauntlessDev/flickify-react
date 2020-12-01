@@ -25,7 +25,7 @@ const apiReducer = (state = initState, action) => {
       return { ...state, loggedIn: false };
     case TYPES.SIGNOUT_SUCCESS:
       console.log("signout success");
-      return { ...state, loggedIn: false };
+      return { ...state, loggedIn: false, user: { images: [{}] } };
     case TYPES.SET_USER:
       console.log("user info:", action.payload);
       return {

@@ -6,10 +6,13 @@ import ExpandLess from "@material-ui/icons/ExpandLess";
 import * as Main from "../mainStyles";
 import { useState } from "react";
 import ReactDOM from "react-dom";
+import { useDispatch } from "react-redux";
+import { signOutSuccess } from "../../../redux/api/apiActions";
 
 export default function MainHeaderContainer({ userProfile, userName }) {
   const { showPlayer } = useContext(searchContext);
   const [clickedProfile, setClickedProfile] = useState(false);
+  const dispatch = useDispatch();
 
   const style = {
     profileSymbol: {
@@ -42,7 +45,9 @@ export default function MainHeaderContainer({ userProfile, userName }) {
         </Main.HeaderProfileContainer>
         {clickedProfile ? (
           <Main.HeaderDropDown>
-            <Main.HeaderDropDownOptions onClick={() => {}}>
+            <Main.HeaderDropDownOptions
+              onClick={() => dispatch(signOutSuccess())}
+            >
               Sign out
             </Main.HeaderDropDownOptions>
           </Main.HeaderDropDown>

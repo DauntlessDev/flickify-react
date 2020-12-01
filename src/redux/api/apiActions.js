@@ -11,6 +11,10 @@ export const fetchTokenFailure = (token) => {
   return { type: TYPES.LOGIN_ERROR };
 };
 
+export const signOutSuccess = () => {
+  return { type: TYPES.SIGNOUT_SUCCESS };
+};
+
 export const setUserInfo = (user) => {
   return { type: TYPES.SET_USER, payload: user };
 };
