@@ -5,7 +5,6 @@ import ExpandMore from "@material-ui/icons/ExpandMore";
 import ExpandLess from "@material-ui/icons/ExpandLess";
 import * as Main from "../mainStyles";
 import { useState } from "react";
-import ReactDOM from "react-dom";
 import { useDispatch } from "react-redux";
 import { signOutSuccess } from "../../../redux/api/apiActions";
 
