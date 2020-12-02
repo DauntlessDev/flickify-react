@@ -28,7 +28,11 @@ export default function MainHeaderContainer({ userProfile, userName }) {
     });
 
     return () => {
-      window.removeEventListener("scroll");
+      try{
+        window.removeEventListener("scroll");
+      }catch(e){
+        console.log("in home, but tried to delete")
+      }
     };
   }, []);
 
