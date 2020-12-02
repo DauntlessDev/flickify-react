@@ -1,10 +1,8 @@
-import React from "react";
-import { useContext } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { searchContext } from "../../../context/searchContext";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import ExpandLess from "@material-ui/icons/ExpandLess";
 import * as Main from "../mainStyles";
-import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { signOutSuccess } from "../../../redux/api/apiActions";
 
@@ -21,8 +19,21 @@ export default function MainHeaderContainer({ userProfile, userName }) {
     },
   };
 
+  const [show, handleShow] = useState(false);
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 100) {
+        handleShow(true);
+      } else handleShow(false);
+    });
+
+    return () => {
+      window.removeEventListener("scroll");
+    };
+  }, []);
+
   return (
-    <Main.Header>
+    <Main.Header show={show}>
       <Main.HeaderGroup>
         <Main.HeaderSearchBar active={showPlayer} />
       </Main.HeaderGroup>

@@ -9,15 +9,13 @@ export const Container = styled.div`
   color: white;
   position: relative;
 
-  @media (max-width: 700px){
+  @media (max-width: 700px) {
     width: 100%;
   }
-
-
 `;
 
 export const MainBar = styled.div`
-width: 100%;
+  width: 100%;
   background-color: #04bf7d;
   background: url(${({ src }) =>src ? `${src}` : "assets/background/browse-feature1.png"})
     center / cover no-repeat;
@@ -40,20 +38,18 @@ export const SubTitle = styled.p`
 `;
 
 export const Header = styled.div`
-  max-width: 100%;
-  padding: 5px 0;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   top: 0;
   right: 0;
-  z-index: 1;
   position: fixed;
+  background: ${({ show }) => (show ? "#070707" : "none")};
+  padding: 3px 0px;
 `;
+
 export const HeaderGroup = styled.div`
-  justify-items: center;
-  display: flex;
-  align-items: center;
 `;
 
 export const HeaderProfileContainer = styled.div`
@@ -62,7 +58,7 @@ export const HeaderProfileContainer = styled.div`
   margin: 10px;
   margin-right: 15px;
   border-radius: 30px;
-  background: black;
+  background: #070707;
   cursor: pointer;
 
   &:hover {
@@ -94,7 +90,6 @@ export const HeaderDropDown = styled.div`
   right: 20px;
   padding: 2px;
   position: fixed;
-
 `;
 
 export const HeaderDropDownOptions = styled.p`
@@ -115,7 +110,7 @@ export const HeaderDropDownOptions = styled.p`
 `;
 
 export const HeaderSearchBar = styled.input`
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(150, 150, 150, 0.3);
   color: white;
   transition: width 0.5s;
   height: 25px;
@@ -181,10 +176,9 @@ export const AlbumContainer = styled.div`
 
 export const AlbumPhoto = styled.img`
   width: 150px;
-  max-width: 100%
-  ;max-height: 80%;
+  max-width: 100%;
+  max-height: 80%;
   border-radius: 5px;
-
 `;
 export const AlbumTitle = styled.p`
   margin: 0;
@@ -226,7 +220,7 @@ export const CardGroup = styled.div`
     width: 100px;
     height: 170px;
   }
-  
+
   @media (max-width: 750px) {
     width: 90px;
     height: 155px;
@@ -239,7 +233,6 @@ export const CardGroup = styled.div`
     width: 80px;
     height: 140px;
   }
-  
 `;
 
 export const ArtistContainer = styled.div`
@@ -250,7 +243,6 @@ export const ArtistPhoto = styled.img`
   width: 100%;
   border-radius: 80px;
   object-fit: cover;
-
 `;
 export const ArtistName = styled.p`
   font-weight: 600;

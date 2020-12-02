@@ -1,9 +1,10 @@
-import React from "react";
+
 import * as ROUTES from "../../constants/routes";
 import * as Header from "./headerStyles";
 import { loginUrl } from "../../constants/spotify";
 
 export default function HeaderContainer() {
+
   return (
     <Header.Container>
       <Header.Group>
