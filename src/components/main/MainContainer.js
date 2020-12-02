@@ -21,9 +21,7 @@ export default function MainContainer() {
         userProfile={user.images[0].url}
         userName={user.display_name}
       />
-      <Main.MainBar>
         <Main.MainContainer>
-          {/* <MainFeatureContainer /> */}
           <Main.Title>Recently Played</Main.Title>
           <Main.SubTitle>Your last played tracks.</Main.SubTitle>
           <Main.AlbumContainer>
@@ -85,7 +83,6 @@ export default function MainContainer() {
               )}
           </Main.ArtistContainer>
         </Main.MainContainer>
-      </Main.MainBar>
     </Main.Container>
   );
 }

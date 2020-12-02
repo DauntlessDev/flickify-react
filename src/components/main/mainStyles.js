@@ -2,24 +2,16 @@ import styled from "styled-components/macro";
 
 export const Container = styled.div`
   max-width: 100%;
-  float: right;
-  display: inline-flex;
-  flex-direction: row;
-  /* height: 700px;  */
+  display: flex;
   color: white;
-  position: relative;
+  background: url(${({ src }) =>src ? `${src}` : "assets/background/browse-feature1.png"})
+    left / cover no-repeat;
+  margin-left: 235px;
+  padding: 50px 0px;
 
   @media (max-width: 700px) {
     width: 100%;
   }
-`;
-
-export const MainBar = styled.div`
-  width: 100%;
-  background-color: #04bf7d;
-  background: url(${({ src }) =>src ? `${src}` : "assets/background/browse-feature1.png"})
-    center / cover no-repeat;
-  padding: 50px 0px;
 `;
 
 export const Title = styled.h1`
@@ -38,7 +30,6 @@ export const SubTitle = styled.p`
 `;
 
 export const Header = styled.div`
-  width: 100%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -133,37 +124,6 @@ export const HeaderTextLink = styled.p`
 
   :hover {
     color: #04bf7d;
-  }
-`;
-
-export const Feature = styled.div`
-  padding: 10px 30px 25px;
-  margin-bottom: 15px;
-`;
-export const FeatureLargeText = styled.p`
-  margin: 0;
-  font-size: 40px;
-`;
-export const FeatureSmallText = styled.p`
-  max-width: 360px;
-`;
-
-export const FeatureButton = styled.button`
-  width: 120px;
-  background-color: transparent;
-  color: #04bf7d;
-  border: 1px solid #04bf7d;
-  padding: 5px;
-  font-size: 15px;
-  cursor: pointer;
-
-  margin-right: 20px;
-  border-radius: 15px;
-
-  &:hover {
-    background-color: #04bf7d;
-    color: white;
-    border: none;
   }
 `;
 
