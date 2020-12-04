@@ -1,4 +1,5 @@
 import styled from "styled-components/macro";
+import { Link as ReactRouterLink } from "react-router-dom";
 
 export const Container = styled.div`
   width: 235px;
@@ -83,7 +84,10 @@ export const PlaylistDivider = styled.div`
   margin: 0 40px;
 `;
 
-export const PlaylistItem = styled.p`
+export const PlaylistItem = styled(ReactRouterLink)`
+  text-decoration: none;
+  display: block;
+  margin: 10px 0;
   color: gray;
   font-weight: 500;
   font-size:14px;

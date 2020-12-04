@@ -29,7 +29,9 @@ export default function SidebarContainer() {
       <SideBar.PlaylistTitle>Playlist</SideBar.PlaylistTitle>
       <SideBar.PlaylistDivider />
       {myPlaylist.map((item, idx) => (
-        <SideBar.PlaylistItem key={idx}>{item.name}</SideBar.PlaylistItem>
+        <SideBar.PlaylistItem to={`/browse/track/${item.id}`} key={idx}>
+          {item.name}
+        </SideBar.PlaylistItem>
       ))}
     </SideBar.Container>
   );

@@ -18,7 +18,6 @@ function App() {
   return (
     <>
       <GlobalStyles />
-      {/* <Browse /> */}
       <Router>
         <Switch>
           <IsUserRedirect
@@ -42,7 +41,6 @@ function App() {
           </IsUserRedirect>
         </Switch>
       </Router>
-      <div id="header-dropdown"/>
     </>
   );
 }
