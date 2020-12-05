@@ -4,9 +4,11 @@ import ExpandMore from "@material-ui/icons/ExpandMore";
 import ExpandLess from "@material-ui/icons/ExpandLess";
 import * as Main from "../mainStyles";
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { signOutSuccess } from "../../../redux/api/apiActions";
 
-export default function MainHeaderContainer({ userProfile, userName }) {
+export default function MainHeaderContainer({ withSearchBar = false }) {
+  const user = useSelector((state) => state.api.user);
   const { showPlayer } = useContext(searchContext);
   const [clickedProfile, setClickedProfile] = useState(false);
   const dispatch = useDispatch();
@@ -28,17 +30,19 @@ export default function MainHeaderContainer({ userProfile, userName }) {
 
   return (
     <Main.Header show={show}>
-      <Main.HeaderGroup>
-        <Main.HeaderSearchBar active={showPlayer} />
-      </Main.HeaderGroup>
+      {withSearchBar ? (
+        <Main.HeaderGroup>
+          <Main.HeaderSearchBar active={showPlayer} />
+        </Main.HeaderGroup>
+      ) : null}
       <Main.HeaderGroup>
         <Main.HeaderProfileContainer
           onClick={() => {
             setClickedProfile(!clickedProfile);
           }}
         >
-          <Main.HeaderProfile src={userProfile} />
-          <Main.HeaderProfileName>{userName}</Main.HeaderProfileName>
+          <Main.HeaderProfile src={user.images[0].url} />
+          <Main.HeaderProfileName>{user.display_name}</Main.HeaderProfileName>
           <Main.HeaderProfileSymbol>
             {clickedProfile ? (
               <ExpandLess style={style.profileSymbol} />

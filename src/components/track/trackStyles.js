@@ -13,9 +13,45 @@ export const Container = styled.div`
   }
 `;
 
-export const Title = styled.h1`
-  padding-left: 30px;
-  font-size: 25px;
-  padding-bottom: 0;
-  margin-bottom: 0;
+export const PlaylistPicturesContainer = styled.div`
+  margin: 22px 30px;
+  height: 220px;
+  width: 220px;
+  background: red;
+`;
+export const PlaylistDetailsContainer = styled.div`
+  height: 220px;
+  width: 202px;
+`;
+export const PlaylistRow = styled.div`
+  flex-flow: row;
+  display: inline-flex;
+  margin: 0;
+`;
+export const PlaylistColumn = styled.div`
+  flex-flow: column;
+  margin: 0;
+`;
+export const PlaylistTitle = styled.h1`
+  font-size: 90px;
+  font-weight: bold;
+  margin: 0;
+`;
+
+export const PlaylistText = styled.p`
+  padding-top: 25px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 15px;
+`;
+
+export const PlaylistOwner = styled.p`
+  font-weight: bold;
+  font-size: 15px;
+`;
+
+export const PlaylistDetails = styled.p`
+  color: gray;
+  font-weight: bold;
+  font-size: 15px;
 `;
