@@ -20,21 +20,11 @@ export default function MainHeaderContainer({ userProfile, userName }) {
   };
 
   const [show, handleShow] = useState(false);
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 100) {
-        handleShow(true);
-      } else handleShow(false);
-    });
-
-    return () => {
-      try{
-        window.removeEventListener("scroll");
-      }catch(e){
-        console.log("in home, but tried to delete")
-      }
-    };
-  }, []);
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) {
+      handleShow(true);
+    } else handleShow(false);
+  });
 
   return (
     <Main.Header show={show}>

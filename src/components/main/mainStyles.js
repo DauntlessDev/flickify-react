@@ -38,6 +38,7 @@ export const Header = styled.div`
   right: 0;
   position: fixed;
   background: ${({ show }) => (show ? "#070707" : "none")};
+  transition: background-color 0.3s ease;
   padding: 3px 0px;
 `;
 

@@ -19,10 +19,9 @@ export default function SidebarContainer() {
         toLink='/browse' icon={<HomeIcon />} title="Home" />
       <SectionContainer
         toLink='/browse/search'
-        onClick={(e) => {
+        onClick={() => {
           setShowPlayer((showPlayer) => !showPlayer);
           console.log("yo", showPlayer);
-          console.log("e", e);
         }}
         icon={<SearchIcon />}
         title="Search"
