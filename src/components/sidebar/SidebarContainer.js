@@ -15,16 +15,20 @@ export default function SidebarContainer() {
   return (
     <SideBar.Container>
       <SideBar.Logo src="assets/logo.png" />
-      <SectionContainer icon={<HomeIcon />} title="Home" />
+      <SectionContainer 
+        toLink='/browse' icon={<HomeIcon />} title="Home" />
       <SectionContainer
-        onClick={() => {
+        toLink='/browse/search'
+        onClick={(e) => {
           setShowPlayer((showPlayer) => !showPlayer);
           console.log("yo", showPlayer);
+          console.log("e", e);
         }}
         icon={<SearchIcon />}
         title="Search"
       />
-      <SectionContainer icon={<LibraryMusicIcon />} title="Your Library" />
+      <SectionContainer 
+        toLink='/browse/yourlibrary' icon={<LibraryMusicIcon />} title="Your Library" />
       <SideBar.Break />
       <SideBar.PlaylistTitle>Playlist</SideBar.PlaylistTitle>
       <SideBar.PlaylistDivider />

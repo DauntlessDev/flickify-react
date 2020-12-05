@@ -38,7 +38,12 @@ export const SectionTitle = styled.p`
   pointer-events: none;
 `;
 
+export const SectionContainerWrapperLink = styled(ReactRouterLink)`
+  text-decoration: none;
+`;
+
 export const SectionContainer = styled.div`
+  text-decoration: none;
   padding: 10px 40px;
   margin: 0;
   width: 200px;
