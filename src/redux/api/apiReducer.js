@@ -9,6 +9,7 @@ const initState = {
   newReleases: [],
   topTracks: [],
   artists: [],
+  currentPlaylist: [],
 };
 
 const apiReducer = (state = initState, action) => {
@@ -62,6 +63,12 @@ const apiReducer = (state = initState, action) => {
       return {
         ...state,
         artists: action.payload,
+      };
+    case TYPES.SET_CURRENT_PLAYLIST:
+      console.log("current playlist:", action.payload);
+      return {
+        ...state,
+        currentPlaylist: action.payload,
       };
     default:
       return state;

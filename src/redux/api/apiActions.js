@@ -39,6 +39,10 @@ export const setArtists = (artists) => {
   return { type: TYPES.SET_TOP_ARTISTS_BROWSE, payload: artists };
 };
 
+export const setCurretPaylist = (playlist) => {
+  return { type: TYPES.SET_CURRENT_PLAYLIST, payload: playlist };
+};
+
 export const getTokenFromResponse = () => {
   return (dispatch) => {
     const token = window.location.hash
@@ -120,5 +124,18 @@ export const getTokenFromResponse = () => {
 
       window.location.hash = "";
     }
+  };
+};
+
+export const navigateToCurrentPlaylist = (playlistId) => {
+  return (dispatch) => {
+    s.getPlaylist(playlistId)
+      .then((data) => {
+        console.log("current playlist", data);
+        dispatch(setCurretPaylist(data));
+      })
+      .catch(() => {
+        console.log("error in current playlist");
+      });
   };
 };
