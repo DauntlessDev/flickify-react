@@ -22,7 +22,7 @@ export const HeaderContainer = styled.div`
   padding-top: 50px;
   background: linear-gradient(180deg, #535353 0%, #2a2a2a 80%);
 `;
-export const PlaylistPicturesContainer = styled.div`
+export const PlaylistPicturesContainer = styled.img`
   margin: 25px 32px;
   height: 220px;
   width: 220px;
@@ -57,6 +57,7 @@ export const PlaylistText = styled.p`
 export const PlaylistOwner = styled.p`
   font-weight: bold;
   font-size: 15px;
+  padding-right: 3px;
 `;
 
 export const PlaylistDetails = styled.p`
@@ -98,7 +99,7 @@ export const TrackSongContainer = styled.div`
   align-items: center;
 `;
 export const TrackSongNumber = styled.p``;
-export const TrackSongImage = styled.div`
+export const TrackSongImage = styled.img`
   width: 40px;
   height: 40px;
   margin: 0 20px;

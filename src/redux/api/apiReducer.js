@@ -9,7 +9,25 @@ const initState = {
   newReleases: [],
   topTracks: [],
   artists: [],
-  currentPlaylist: [],
+  currentPlaylist: {
+    owner: { display_name: "" },
+    name: "",
+    images: [{}],
+    tracks: {
+      items: [
+        {
+          added_at: "",
+          track: {
+            album: { name: "" },
+            artists: [{ name: "" }],
+            name: "",
+            duration_ms: "",
+          },
+        },
+      ],
+      total: 0,
+    },
+  },
 };
 
 const apiReducer = (state = initState, action) => {

@@ -1,23 +1,32 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import * as Track from "./trackStyles";
 import MainHeaderContainer from "../main/small-components/MainHeaderContainer";
 import TrackSongContainer from "./small-component/TrackSongContainer";
 export default function TrackContainer() {
+  const currentPlaylist = useSelector((state) => state.api.currentPlaylist);
+
   return (
     <>
       <MainHeaderContainer />
       <Track.Container>
         <Track.HeaderContainer>
           <Track.PlaylistRow>
-            <Track.PlaylistPicturesContainer />
+            <Track.PlaylistPicturesContainer
+              src={currentPlaylist.images[0].url}
+            />
             <Track.PlaylistDetailsContainer>
               <Track.PlaylistColumn>
-                <Track.PlaylistText>Playlist</Track.PlaylistText>
-                <Track.PlaylistTitle>grl$</Track.PlaylistTitle>
+                <Track.PlaylistText>{currentPlaylist.type}</Track.PlaylistText>
+                <Track.PlaylistTitle>
+                  {currentPlaylist.name}
+                </Track.PlaylistTitle>
                 <Track.PlaylistRow>
-                  <Track.PlaylistOwner>Brave Leuterio</Track.PlaylistOwner>
+                  <Track.PlaylistOwner>
+                    {currentPlaylist.owner.display_name}
+                  </Track.PlaylistOwner>
                   <Track.PlaylistDetails>
-                    &middot; 30 songs, 2 hr 12 min
+                    &middot; {currentPlaylist.tracks.total} songs
                   </Track.PlaylistDetails>
                 </Track.PlaylistRow>
               </Track.PlaylistColumn>
@@ -33,14 +42,17 @@ export default function TrackContainer() {
             <Track.TrackTitle>Album</Track.TrackTitle>
             <Track.TrackTitle>Date Added</Track.TrackTitle>
             <Track.TrackTitle>Time</Track.TrackTitle>
-
-            <TrackSongContainer />
-            <TrackSongContainer />
-            <TrackSongContainer />
-            <TrackSongContainer />
-            <TrackSongContainer />
-            <TrackSongContainer />
-            <TrackSongContainer />
+            {currentPlaylist.tracks.items[0].track.name &&
+              currentPlaylist.tracks.items.map((item, index) => (
+                <TrackSongContainer
+                  image={item.track.album.images[0].url}
+                  date={item.added_at}
+                  album={item.track.album.name}
+                  artist={item.track.artists[0].name}
+                  song={item.track.name}
+                  time={item.track.duration_ms}
+                />
+              ))}
           </Track.Grid>
         </Track.TrackPlaylistContainer>
       </Track.Container>
