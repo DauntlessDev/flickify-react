@@ -2,6 +2,7 @@ import React from "react";
 
 import * as Track from "../trackStyles";
 export default function TrackSongContainer({
+  index,
   date,
   album,
   song,
@@ -13,8 +14,8 @@ export default function TrackSongContainer({
     <>
       <Track.TrackSongContainer>
         <Track.PlaylistRow>
-          <Track.TrackSongSubDetails>1</Track.TrackSongSubDetails>
-          <Track.TrackSongImage src={image}/>
+          <Track.SongIndexContainer>{index + 1}</Track.SongIndexContainer>
+          <Track.TrackSongImage src={image} />
           <Track.PlaylistColumn>
             <Track.TrackSongTitle>{song}</Track.TrackSongTitle>
             <Track.TrackSongSubDetails>{artist}</Track.TrackSongSubDetails>

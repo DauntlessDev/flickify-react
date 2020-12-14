@@ -45,6 +45,7 @@ export default function TrackContainer() {
             {currentPlaylist.tracks.items[0].track.name &&
               currentPlaylist.tracks.items.map((item, index) => (
                 <TrackSongContainer
+                  index={index}
                   image={item.track.album.images[0].url}
                   date={item.added_at}
                   album={item.track.album.name}
