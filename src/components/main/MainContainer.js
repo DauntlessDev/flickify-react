@@ -22,10 +22,10 @@ export default function MainContainer() {
         <Main.SubTitle>Your last played tracks.</Main.SubTitle>
         <Main.AlbumContainer>
           {recentlyPlayed &&
-            recentlyPlayed.map((item,index) =>
+            recentlyPlayed.map((item, index) =>
               index < windowWidth / 300 ? (
                 <AlbumContainer
-                  key={item.track.album.id}
+                  key={"recently-" + item.track.album.id + index}
                   title={item.track.album.name}
                   src={item.track.album.images[0].url}
                   singer={item.track.artists[0].name}
@@ -40,7 +40,7 @@ export default function MainContainer() {
             newReleases.map((item, index) =>
               index < windowWidth / 300 ? (
                 <AlbumContainer
-                  key={item.id}
+                  key={"new-" + item.id}
                   title={item.name}
                   src={item.images[0].url}
                   singer={item.artists[0].name}
@@ -55,7 +55,7 @@ export default function MainContainer() {
             topTracks.map((item, index) =>
               index < windowWidth / 300 ? (
                 <AlbumContainer
-                  key={item.id}
+                  key={"top-" + item.id}
                   title={item.album.name}
                   src={item.album.images[0].url}
                   singer={item.artists[0].name}
@@ -69,7 +69,7 @@ export default function MainContainer() {
             artists.map((item, index) =>
               index < windowWidth / 300 ? (
                 <ArtistContainer
-                  key={item.id}
+                  key={"popular-" + item.id}
                   name={item.name}
                   src={item.images[0].url}
                 />

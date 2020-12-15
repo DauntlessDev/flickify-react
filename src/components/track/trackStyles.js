@@ -1,5 +1,7 @@
 import styled from "styled-components/macro";
 
+export const Wrapper = styled.div``;
+
 export const Container = styled.div`
   max-width: 100%;
   display: flex;
