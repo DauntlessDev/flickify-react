@@ -13,6 +13,7 @@ export const Container = styled.div`
 
   @media (max-width: 700px) {
     width: 100%;
+    margin-left: 0;
   }
 `;
 

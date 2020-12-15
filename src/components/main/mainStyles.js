@@ -1,16 +1,15 @@
 import styled from "styled-components/macro";
 
-export const Container = styled.div`
-  max-width: 100%;
-  display: flex;
-  color: white;
+export const MainContainer = styled.div`
   background: url(${({ src }) =>src ? `${src}` : "assets/background/browse-feature1.png"})
     left / cover no-repeat;
   margin-left: 235px;
   padding: 50px 0px;
-
+  color: white;
+  
   @media (max-width: 700px) {
     width: 100%;
+    margin-left: 0;
   }
 `;
 
@@ -219,8 +218,4 @@ export const ArtistPosition = styled.p`
   color: #aeaeae;
   font-size: 15px;
   font-weight: 500;
-`;
-
-export const MainContainer = styled.div`
-  padding-left: 10px;
 `;

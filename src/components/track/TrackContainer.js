@@ -8,7 +8,6 @@ export default function TrackContainer() {
 
   return (
     <>
-      <MainHeaderContainer />
       <Track.Container>
         <Track.HeaderContainer>
           <Track.PlaylistRow>
@@ -36,23 +35,23 @@ export default function TrackContainer() {
         <Track.TrackPlaylistContainer>
           <Track.PlaylistButton />
           <Track.Grid>
-          <Track.TrackTitle># Title</Track.TrackTitle>
-          <Track.TrackTitle>Album</Track.TrackTitle>
-          <Track.TrackTitle>Date Added</Track.TrackTitle>
-          <Track.TrackTitle>Time</Track.TrackTitle>
-          {currentPlaylist.tracks.items[0].track.name &&
-            currentPlaylist.tracks.items.map((item, index) => (
-              <TrackSongContainer
-                key={item.track.name + index}
-                index={index}
-                image={item.track.album.images[0].url}
-                date={item.added_at}
-                album={item.track.album.name}
-                artist={item.track.artists[0].name}
-                song={item.track.name}
-                time={item.track.duration_ms}
-              />
-            ))}
+            <Track.TrackTitle># Title</Track.TrackTitle>
+            <Track.TrackTitle>Album</Track.TrackTitle>
+            <Track.TrackTitle>Date Added</Track.TrackTitle>
+            <Track.TrackTitle>Time</Track.TrackTitle>
+            {currentPlaylist.tracks.items[0].track.name &&
+              currentPlaylist.tracks.items.map((item, index) => (
+                <TrackSongContainer
+                  key={item.track.name + index}
+                  index={index}
+                  image={item.track.album.images[0].url}
+                  date={item.added_at}
+                  album={item.track.album.name}
+                  artist={item.track.artists[0].name}
+                  song={item.track.name}
+                  time={item.track.duration_ms}
+                />
+              ))}
           </Track.Grid>
         </Track.TrackPlaylistContainer>
       </Track.Container>
