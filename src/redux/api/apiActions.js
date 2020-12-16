@@ -39,8 +39,16 @@ export const setArtists = (artists) => {
   return { type: TYPES.SET_TOP_ARTISTS_BROWSE, payload: artists };
 };
 
-export const setCurretPaylist = (playlist) => {
+export const setCurrentPlaylist = (playlist) => {
   return { type: TYPES.SET_CURRENT_PLAYLIST, payload: playlist };
+};
+
+export const setCurrentAlbum = (album) => {
+  return { type: TYPES.SET_CURRENT_ALBUM, payload: album };
+};
+
+export const setCurrentAlbumTracks = (albumTracks) => {
+  return { type: TYPES.SET_CURRENT_ALBUM_TRACKS, payload: albumTracks };
 };
 
 export const getTokenFromResponse = () => {
@@ -128,14 +136,39 @@ export const getTokenFromResponse = () => {
 };
 
 export const navigateToCurrentPlaylist = (playlistId) => {
+  console.log("current playlist ID =======", playlistId);
   return (dispatch) => {
     s.getPlaylist(playlistId)
       .then((data) => {
         console.log("current playlist", data);
-        dispatch(setCurretPaylist(data));
+        dispatch(setCurrentPlaylist(data));
       })
       .catch(() => {
         console.log("error in current playlist");
       });
+  };
+};
+
+export const navigateToCurrentAlbum = (albumId) => {
+  console.log("current album ID =======", albumId);
+  return (dispatch) => {
+    s.getAlbum(albumId)
+      .then((data) => {
+        console.log("current album", data);
+        dispatch(setCurrentAlbum(data));
+      })
+      .catch(() => {
+        console.log("error in current album");
+      });
+
+      
+    s.getAlbumTracks(albumId)
+    .then((data) => {
+      console.log("current album tracks", data);
+      dispatch(setCurrentAlbumTracks(data));
+    })
+    .catch(() => {
+      console.log("error in current album tracks");
+    });
   };
 };

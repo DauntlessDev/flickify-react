@@ -8,6 +8,7 @@ import { useState } from "react";
 import { searchContext } from "../context/searchContext";
 import { Route, Switch } from "react-router-dom";
 import TrackContainer from "../components/track/TrackContainer";
+import AlbumContainer from "../components/album/AlbumContainer";
 import MainHeaderContainer from "../components/main/small-components/MainHeaderContainer";
 
 export default function Browse() {
@@ -17,17 +18,18 @@ export default function Browse() {
       <searchContext.Provider value={{ showPlayer, setShowPlayer }}>
         <SidebarContainer />
 
-        {/* <Main.Container> */}
-          <MainHeaderContainer />
-          <Switch>
-            <Route exact path="/browse">
-              <MainContainer />
-            </Route>
-            <Route path={"/browse/track/:id"}>
-              <TrackContainer />
-            </Route>
-          </Switch>
-        {/* </Main.Container> */}
+        <MainHeaderContainer />
+        <Switch>
+          <Route exact path="/browse">
+            <MainContainer />
+          </Route>
+          <Route path={"/browse/track/:id"}>
+            <TrackContainer />
+          </Route>
+          <Route path={"/browse/album/:id"}>
+            <AlbumContainer />
+          </Route>
+        </Switch>
       </searchContext.Provider>
       {/* <MusicPlayer /> */}
     </>

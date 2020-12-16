@@ -28,21 +28,7 @@ export default function MainContainer() {
                   title={item.track.album.name}
                   src={item.track.album.images[0].url}
                   singer={item.track.artists[0].name}
-                />
-              ) : null
-            )}
-        </Main.AlbumContainer>
-        <Main.Title>New Releases</Main.Title>
-        <Main.SubTitle>Fresh tracks recommended for you.</Main.SubTitle>
-        <Main.AlbumContainer>
-          {newReleases &&
-            newReleases.map((item, index) =>
-              index < windowWidth / 300 ? (
-                <AlbumContainer
-                  key={"new-" + item.id}
-                  title={item.name}
-                  src={item.images[0].url}
-                  singer={item.artists[0].name}
+                  id={item.track.album.id}
                 />
               ) : null
             )}
@@ -58,6 +44,23 @@ export default function MainContainer() {
                   title={item.album.name}
                   src={item.album.images[0].url}
                   singer={item.artists[0].name}
+                  id={item.album.id}
+                />
+              ) : null
+            )}
+        </Main.AlbumContainer>
+        <Main.Title>New Releases</Main.Title>
+        <Main.SubTitle>Fresh tracks recommended for you.</Main.SubTitle>
+        <Main.AlbumContainer>
+          {newReleases &&
+            newReleases.map((item, index) =>
+              index < windowWidth / 300 ? (
+                <AlbumContainer
+                  key={"new-" + item.id}
+                  title={item.name}
+                  src={item.images[0].url}
+                  singer={item.artists[0].name}
+                  id={item.id}
                 />
               ) : null
             )}

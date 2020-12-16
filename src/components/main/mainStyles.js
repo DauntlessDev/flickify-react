@@ -1,12 +1,13 @@
 import styled from "styled-components/macro";
+import { Link as ReactRouterLink } from "react-router-dom";
 
 export const MainContainer = styled.div`
-  background: url(${({ src }) =>src ? `${src}` : "assets/background/browse-feature1.png"})
+  background: url(${({ src }) => src ? `${src}` : "assets/background/browse-feature1.png"})
     left / cover no-repeat;
   margin-left: 235px;
   padding: 50px 0px;
   color: white;
-  
+
   @media (max-width: 700px) {
     width: 100%;
     margin-left: 0;
@@ -41,8 +42,7 @@ export const Header = styled.div`
   padding: 3px 0px;
 `;
 
-export const HeaderGroup = styled.div`
-`;
+export const HeaderGroup = styled.div``;
 
 export const HeaderProfileContainer = styled.div`
   display: inline-flex;
@@ -218,4 +218,9 @@ export const ArtistPosition = styled.p`
   color: #aeaeae;
   font-size: 15px;
   font-weight: 500;
+`;
+
+export const CardLink = styled(ReactRouterLink)`
+  text-decoration: none;
+  color: white;
 `;

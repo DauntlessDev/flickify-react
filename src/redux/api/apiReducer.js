@@ -88,6 +88,20 @@ const apiReducer = (state = initState, action) => {
         ...state,
         currentPlaylist: action.payload,
       };
+
+    case TYPES.SET_CURRENT_ALBUM:
+      console.log("current album:", action.payload);
+      return {
+        ...state,
+        currentAlbum: action.payload,
+      };
+
+    case TYPES.SET_CURRENT_ALBUM_TRACKS:
+      console.log("current album tracks:", action.payload);
+      return {
+        ...state,
+        currentAlbumTracks: action.payload,
+      };
     default:
       return state;
   }
