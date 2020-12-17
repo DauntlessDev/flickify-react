@@ -14,7 +14,7 @@ export default function MainContainer() {
 
   const windowWidth = useWindowWidth();
 
-  return (
+  return recentlyPlayed && newReleases && topTracks && artists ? (
     <>
       <Main.MainContainer>
         <Main.Title>Recently Played</Main.Title>
@@ -80,5 +80,5 @@ export default function MainContainer() {
         </Main.ArtistContainer>
       </Main.MainContainer>
     </>
-  );
+  ) : null;
 }

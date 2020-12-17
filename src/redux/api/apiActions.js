@@ -47,10 +47,6 @@ export const setCurrentAlbum = (album) => {
   return { type: TYPES.SET_CURRENT_ALBUM, payload: album };
 };
 
-export const setCurrentAlbumTracks = (albumTracks) => {
-  return { type: TYPES.SET_CURRENT_ALBUM_TRACKS, payload: albumTracks };
-};
-
 export const getTokenFromResponse = () => {
   return (dispatch) => {
     const token = window.location.hash
@@ -160,15 +156,5 @@ export const navigateToCurrentAlbum = (albumId) => {
       .catch(() => {
         console.log("error in current album");
       });
-
-      
-    s.getAlbumTracks(albumId)
-    .then((data) => {
-      console.log("current album tracks", data);
-      dispatch(setCurrentAlbumTracks(data));
-    })
-    .catch(() => {
-      console.log("error in current album tracks");
-    });
   };
 };

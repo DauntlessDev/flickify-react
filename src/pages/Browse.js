@@ -8,7 +8,7 @@ import { useState } from "react";
 import { searchContext } from "../context/searchContext";
 import { Route, Switch } from "react-router-dom";
 import TrackContainer from "../components/track/TrackContainer";
-import AlbumContainer from "../components/album/AlbumContainer";
+import AlbumContainer from "../components/track/AlbumContainer";
 import MainHeaderContainer from "../components/main/small-components/MainHeaderContainer";
 
 export default function Browse() {

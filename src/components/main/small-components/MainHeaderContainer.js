@@ -7,7 +7,6 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { signOutSuccess } from "../../../redux/api/apiActions";
 
-
 export default function MainHeaderContainer({ withSearchBar = false }) {
   const user = useSelector((state) => state.api.user);
   const { showPlayer } = useContext(searchContext);
@@ -30,7 +29,7 @@ export default function MainHeaderContainer({ withSearchBar = false }) {
   const [show, handleShow] = useState(false);
   window.addEventListener("scroll", handleShowHeader);
 
-  return (
+  return user ? (
     <Main.Header show={show}>
       {withSearchBar ? (
         <Main.HeaderGroup>
@@ -64,5 +63,5 @@ export default function MainHeaderContainer({ withSearchBar = false }) {
         ) : null}
       </Main.HeaderGroup>
     </Main.Header>
-  );
+  ) : null;
 }

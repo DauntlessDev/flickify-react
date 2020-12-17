@@ -5,7 +5,7 @@ import TrackSongContainer from "./small-component/TrackSongContainer";
 export default function TrackContainer() {
   const currentPlaylist = useSelector((state) => state.api.currentPlaylist);
 
-  return (
+  return currentPlaylist ? (
     <>
       <Track.Container>
         <Track.HeaderContainer>
@@ -55,5 +55,5 @@ export default function TrackContainer() {
         </Track.TrackPlaylistContainer>
       </Track.Container>
     </>
-  );
+  ) : null;
 }

@@ -14,7 +14,7 @@ export default function SidebarContainer() {
   const myPlaylist = useSelector((state) => state.api.myPlaylist);
   const dispatch = useDispatch();
 
-  return (
+  return myPlaylist ? (
     <SideBar.Container>
       <SideBar.Logo src="assets/logo.png" />
       <SectionContainer toLink="/browse" icon={<HomeIcon />} title="Home" />
@@ -45,5 +45,5 @@ export default function SidebarContainer() {
         </SideBar.PlaylistItem>
       ))}
     </SideBar.Container>
-  );
+  ) : null;
 }

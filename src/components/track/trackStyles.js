@@ -129,3 +129,17 @@ export const SongIndexContainer = styled.div`
   font-size: 20px;
   text-align: right;
 `;
+
+export const AlbumTitle = styled.h1`
+  font-size: 90px;
+  font-weight: bold;
+  margin: 0;
+
+  @media (max-width: 1300px) {
+    font-size: 55px;
+  }
+
+  @media (max-width: 1100px) {
+    font-size: 40px;
+  }
+`;

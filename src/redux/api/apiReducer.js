@@ -3,31 +3,14 @@ import * as TYPES from "./apiTypes";
 const initState = {
   authToken: { "": undefined },
   loggedIn: false,
-  user: { images: [{}] },
-  myPlaylist: [],
-  recentlyPlayed: [],
-  newReleases: [],
-  topTracks: [],
-  artists: [],
-  currentPlaylist: {
-    owner: { display_name: "" },
-    name: "",
-    images: [{}],
-    tracks: {
-      items: [
-        {
-          added_at: "",
-          track: {
-            album: { name: "" },
-            artists: [{ name: "" }],
-            name: "",
-            duration_ms: "",
-          },
-        },
-      ],
-      total: 0,
-    },
-  },
+  user: null,
+  myPlaylist: null,
+  recentlyPlayed: null,
+  newReleases: null,
+  topTracks: null,
+  artists: null,
+  currentPlaylist: null,
+  currentAlbum: null,
 };
 
 const apiReducer = (state = initState, action) => {
@@ -96,12 +79,6 @@ const apiReducer = (state = initState, action) => {
         currentAlbum: action.payload,
       };
 
-    case TYPES.SET_CURRENT_ALBUM_TRACKS:
-      console.log("current album tracks:", action.payload);
-      return {
-        ...state,
-        currentAlbumTracks: action.payload,
-      };
     default:
       return state;
   }
