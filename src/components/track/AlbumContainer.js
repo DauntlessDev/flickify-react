@@ -1,11 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import * as Album from "./trackStyles";
+import AlbumSongContainer from "./small-component/AlbumSongContainer";
 export default function AlbumContainer() {
   const currentAlbum = useSelector((state) => state.api.currentAlbum);
-  const currentAlbumTracks = useSelector(
-    (state) => state.api.currentAlbumTracks
-  );
 
   return currentAlbum ? (
     <>
@@ -29,6 +27,23 @@ export default function AlbumContainer() {
             </Album.PlaylistDetailsContainer>
           </Album.PlaylistRow>
         </Album.HeaderContainer>
+        <Album.TrackPlaylistContainer>
+          <Album.PlaylistButton />
+          <Album.AlbumGrid>
+            <Album.TrackTitle># Title</Album.TrackTitle>
+            <Album.TrackTitle>Time</Album.TrackTitle>
+            {currentAlbum.tracks.items[0].name &&
+              currentAlbum.tracks.items.map((item, index) => (
+                <AlbumSongContainer
+                  key={item.name + index}
+                  index={index}
+                  artist={item.artists[0].name}
+                  song={item.name}
+                  time={item.duration_ms}
+                />
+              ))}
+          </Album.AlbumGrid>
+        </Album.TrackPlaylistContainer>
       </Album.Container>
     </>
   ) : null;

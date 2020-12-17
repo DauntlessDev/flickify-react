@@ -143,3 +143,18 @@ export const AlbumTitle = styled.h1`
     font-size: 40px;
   }
 `;
+
+export const AlbumGrid = styled.div`
+  padding: 5px 20px;
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  grid-column-gap: 50px;
+  grid-row-gap: 20px;
+  margin: 0;
+`;
+
+
+export const AlbumDivider = styled.div`
+padding: 15px;
+`;
+
