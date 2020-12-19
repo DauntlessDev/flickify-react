@@ -30,6 +30,11 @@ export const PlaylistPicturesContainer = styled.img`
   height: 220px;
   width: 220px;
   background: red;
+
+  @media (max-width: 1400px) {
+    height: 150px;
+    width: 150px;
+  }
 `;
 export const PlaylistDetailsContainer = styled.div`
   height: 220px;
@@ -48,6 +53,14 @@ export const PlaylistTitle = styled.h1`
   font-size: 90px;
   font-weight: bold;
   margin: 0;
+
+  @media (max-width: 1000px) {
+    font-size: 35px;
+  }
+
+  @media (max-width: 750px) {
+    font-size: 30px;
+  }
 `;
 
 export const PlaylistText = styled.p`
@@ -172,6 +185,14 @@ export const AlbumTitle = styled.h1`
 
   @media (max-width: 1300px) {
     font-size: 55px;
+  }
+
+  @media (max-width: 1000px) {
+    font-size: 35px;
+  }
+
+  @media (max-width: 750px) {
+    font-size: 28px;
   }
 `;
 
