@@ -11,6 +11,8 @@ export default function TrackSongContainer({
   image,
   showDate,
 }) {
+  const dateTyped = new Date(date).toDateString();
+  const dateTypedString = dateTyped.substring(3);
   return (
     <>
       <Track.TrackSongContainer>
@@ -24,7 +26,7 @@ export default function TrackSongContainer({
         </Track.PlaylistRow>
       </Track.TrackSongContainer>
       <Track.TrackSongSubDetails>{album}</Track.TrackSongSubDetails>
-      <Track.TrackSongDate>{date}</Track.TrackSongDate>
+      <Track.TrackSongDate>{dateTypedString}</Track.TrackSongDate>
       <Track.TrackSongSubDetails>{time}</Track.TrackSongSubDetails>
     </>
   );
