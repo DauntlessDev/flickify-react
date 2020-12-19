@@ -13,6 +13,7 @@ import MainHeaderContainer from "../components/main/small-components/MainHeaderC
 
 export default function Browse() {
   const [showPlayer, setShowPlayer] = useState(false);
+
   return (
     <>
       <searchContext.Provider value={{ showPlayer, setShowPlayer }}>

@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import * as Main from "./mainStyles";
 import AlbumContainer from "./small-components/AlbumContainer";
 import ArtistContainer from "./small-components/ArtistContainer";
-import MainHeaderContainer from "./small-components/MainHeaderContainer";
+
 
 export default function MainContainer() {
   const recentlyPlayed = useSelector((state) => state.api.recentlyPlayed);

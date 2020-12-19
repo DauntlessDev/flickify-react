@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useSelector } from "react-redux";
 import * as Track from "./trackStyles";
 import TrackSongContainer from "./small-component/TrackSongContainer";
+
 export default function TrackContainer() {
   const currentPlaylist = useSelector((state) => state.api.currentPlaylist);
 

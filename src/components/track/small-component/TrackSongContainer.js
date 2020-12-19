@@ -9,6 +9,7 @@ export default function TrackSongContainer({
   time,
   artist,
   image,
+  showDate,
 }) {
   return (
     <>
@@ -23,7 +24,7 @@ export default function TrackSongContainer({
         </Track.PlaylistRow>
       </Track.TrackSongContainer>
       <Track.TrackSongSubDetails>{album}</Track.TrackSongSubDetails>
-      <Track.TrackSongSubDetails>{date}</Track.TrackSongSubDetails>
+      <Track.TrackSongDate>{date}</Track.TrackSongDate>
       <Track.TrackSongSubDetails>{time}</Track.TrackSongSubDetails>
     </>
   );

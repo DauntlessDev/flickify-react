@@ -84,17 +84,40 @@ export const Grid = styled.div`
   grid-column-gap: 220px;
   grid-row-gap: 20px;
   margin: 0;
+
+  @media (max-width: 1400px) {
+    grid-column-gap: 10px;
+    grid-template-columns: 2fr repeat(3, 1fr);
+  }
+
+  @media (max-width: 1200px) {
+    grid-template-columns: 2fr repeat(2, 1fr);
+  }
 `;
 
 export const TrackPlaylistContainer = styled.div`
   padding: 25px 32px 0px;
   background: #1d1d1d;
+
+  @media (max-width: 1100px) and (max-width: 800px) {
+    padding: 25px 15px 0px;
+  }
+
+  @media (max-width: 1000px) and (max-width: 600px) {
+    padding: 25px 32px 0px;
+  }
 `;
 
 export const TrackTitle = styled.p`
   text-transform: uppercase;
   font-size: 14px;
   letter-spacing: 1.2px;
+
+  @media (max-width: 1200px) {
+    &:nth-child(3) {
+      display: none;
+    }
+  }
 `;
 
 export const TrackSongContainer = styled.div`
@@ -121,6 +144,18 @@ export const TrackSongSubDetails = styled.p`
   margin: 0;
 `;
 
+export const TrackSongDate = styled.p`
+  margin: 0;
+  color: lightgray;
+  font-size: 15px;
+  padding: 0;
+  margin: 0;
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
+`;
+
 export const SongIndexContainer = styled.div`
   width: 25px;
   box-sizing: border-box;
@@ -138,10 +173,6 @@ export const AlbumTitle = styled.h1`
   @media (max-width: 1300px) {
     font-size: 55px;
   }
-
-  @media (max-width: 1100px) {
-    font-size: 40px;
-  }
 `;
 
 export const AlbumGrid = styled.div`
@@ -153,8 +184,6 @@ export const AlbumGrid = styled.div`
   margin: 0;
 `;
 
-
 export const AlbumDivider = styled.div`
-padding: 15px;
+  padding: 15px;
 `;
-
