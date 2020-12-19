@@ -1,4 +1,5 @@
 import React from "react";
+import { millisToMinutesAndSeconds } from "../../../utils/timeFormatter";
 
 import * as Album from "../trackStyles";
 export default function TrackSongContainer({
@@ -8,7 +9,7 @@ export default function TrackSongContainer({
   artist,
   image,
 }) {
-  
+  const timeFormatted = millisToMinutesAndSeconds(time);
   return (
     <>
       <Album.TrackSongContainer>
@@ -21,7 +22,7 @@ export default function TrackSongContainer({
           </Album.PlaylistColumn>
         </Album.PlaylistRow>
       </Album.TrackSongContainer>
-      <Album.TrackSongSubDetails>{time}</Album.TrackSongSubDetails>
+      <Album.TrackSongSubDetails>{timeFormatted}</Album.TrackSongSubDetails>
     </>
   );
 }

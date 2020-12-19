@@ -1,4 +1,5 @@
 import React from "react";
+import { millisToMinutesAndSeconds } from "../../../utils/timeFormatter";
 
 import * as Track from "../trackStyles";
 export default function TrackSongContainer({
@@ -13,6 +14,7 @@ export default function TrackSongContainer({
 }) {
   const dateTyped = new Date(date).toDateString();
   const dateTypedString = dateTyped.substring(3);
+  const timeFormatted = millisToMinutesAndSeconds(time);
   return (
     <>
       <Track.TrackSongContainer>
@@ -27,7 +29,7 @@ export default function TrackSongContainer({
       </Track.TrackSongContainer>
       <Track.TrackSongSubDetails>{album}</Track.TrackSongSubDetails>
       <Track.TrackSongDate>{dateTypedString}</Track.TrackSongDate>
-      <Track.TrackSongSubDetails>{time}</Track.TrackSongSubDetails>
+      <Track.TrackSongSubDetails>{timeFormatted}</Track.TrackSongSubDetails>
     </>
   );
 }
