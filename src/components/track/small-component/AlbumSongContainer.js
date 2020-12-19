@@ -12,17 +12,19 @@ export default function TrackSongContainer({
   const timeFormatted = millisToMinutesAndSeconds(time);
   return (
     <>
-      <Album.TrackSongContainer>
-        <Album.PlaylistRow>
-          <Album.SongIndexContainer>{index + 1}</Album.SongIndexContainer>
-          <Album.AlbumDivider />
-          <Album.PlaylistColumn>
-            <Album.TrackSongTitle>{song}</Album.TrackSongTitle>
-            <Album.TrackSongSubDetails>{artist}</Album.TrackSongSubDetails>
-          </Album.PlaylistColumn>
-        </Album.PlaylistRow>
-      </Album.TrackSongContainer>
-      <Album.TrackSongSubDetails>{timeFormatted}</Album.TrackSongSubDetails>
+      <Album.RowWrapper>
+        <Album.TrackSongContainer>
+          <Album.PlaylistRow>
+            <Album.SongIndexContainer>{index + 1}</Album.SongIndexContainer>
+            <Album.AlbumDivider />
+            <Album.PlaylistColumn>
+              <Album.TrackSongTitle>{song}</Album.TrackSongTitle>
+              <Album.TrackSongSubDetails>{artist}</Album.TrackSongSubDetails>
+            </Album.PlaylistColumn>
+          </Album.PlaylistRow>
+        </Album.TrackSongContainer>
+        <Album.TrackSubDetails>{timeFormatted}</Album.TrackSubDetails>
+      </Album.RowWrapper>
     </>
   );
 }

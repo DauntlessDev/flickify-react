@@ -2,10 +2,18 @@ import React from "react";
 import { useSelector } from "react-redux";
 import * as Track from "./trackStyles";
 import TrackSongContainer from "./small-component/TrackSongContainer";
+import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 
 export default function TrackContainer() {
   const currentPlaylist = useSelector((state) => state.api.currentPlaylist);
 
+  const styles = {
+    largeIcon: {
+      width: 40,
+      height: 40,
+      color: "white",
+    },
+  };
   return currentPlaylist ? (
     <>
       <Track.Container>
@@ -33,7 +41,9 @@ export default function TrackContainer() {
           </Track.PlaylistRow>
         </Track.HeaderContainer>
         <Track.TrackPlaylistContainer>
-          <Track.PlaylistButton />
+          <Track.PlaylistButton>
+            <PlayArrowIcon style={styles.largeIcon} />
+          </Track.PlaylistButton>
           <Track.Grid>
             <Track.TrackTitle># Title</Track.TrackTitle>
             <Track.TrackTitle>Album</Track.TrackTitle>

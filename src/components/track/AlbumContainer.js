@@ -2,8 +2,18 @@ import React from "react";
 import { useSelector } from "react-redux";
 import * as Album from "./trackStyles";
 import AlbumSongContainer from "./small-component/AlbumSongContainer";
+import PlayArrowIcon from "@material-ui/icons/PlayArrow";
+
 export default function AlbumContainer() {
   const currentAlbum = useSelector((state) => state.api.currentAlbum);
+
+  const styles = {
+    largeIcon: {
+      width: 40,
+      height: 40,
+      color: "white",
+    },
+  };
 
   return currentAlbum ? (
     <>
@@ -28,7 +38,9 @@ export default function AlbumContainer() {
           </Album.PlaylistRow>
         </Album.HeaderContainer>
         <Album.TrackPlaylistContainer>
-          <Album.PlaylistButton />
+          <Album.PlaylistButton>
+            <PlayArrowIcon style={styles.largeIcon} />
+          </Album.PlaylistButton>
           <Album.AlbumGrid>
             <Album.TrackTitle># Title</Album.TrackTitle>
             <Album.TrackTitle>Time</Album.TrackTitle>

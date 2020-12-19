@@ -85,26 +85,25 @@ export const PlaylistDetails = styled.p`
 export const PlaylistButton = styled.button`
   width: 55px;
   height: 55px;
-  border-radius: 60px;
+  border-radius: 55px;
   background-color: #1db954;
-  border: none;
+  border: none; 
+  cursor: pointer;
 `;
 
 export const Grid = styled.div`
   padding: 5px 20px;
   display: grid;
-  grid-template-columns: 3fr repeat(3, 1fr);
-  grid-column-gap: 220px;
-  grid-row-gap: 20px;
+  grid-template-columns: 6fr repeat(2, 3fr) 1fr;
+  grid-row-gap: 10px;
   margin: 0;
 
   @media (max-width: 1400px) {
-    grid-column-gap: 10px;
-    grid-template-columns: 2fr repeat(3, 1fr);
+    grid-template-columns: 5fr repeat(2, 3fr) 1fr;
   }
 
   @media (max-width: 1200px) {
-    grid-template-columns: 2fr repeat(2, 1fr);
+    grid-template-columns: 5fr 3fr 1fr;
   }
 `;
 
@@ -136,6 +135,7 @@ export const TrackTitle = styled.p`
 export const TrackSongContainer = styled.div`
   display: inline-flex;
   align-items: center;
+  padding: 5px 0;
 `;
 export const TrackSongNumber = styled.p``;
 export const TrackSongImage = styled.img`
@@ -150,19 +150,23 @@ export const TrackSongTitle = styled.p`
   font-size: 17px;
 `;
 export const TrackSongSubDetails = styled.p`
-  margin: 0;
   color: lightgray;
   font-size: 15px;
-  padding: 0;
   margin: 0;
 `;
 
-export const TrackSongDate = styled.p`
-  margin: 0;
+export const TrackSubDetails = styled.p`
   color: lightgray;
   font-size: 15px;
-  padding: 0;
   margin: 0;
+  line-height: 3;
+`;
+
+export const TrackSongDate = styled.p`
+  color: lightgray;
+  font-size: 15px;
+  margin: 0;
+  line-height: 3;
 
   @media (max-width: 1200px) {
     display: none;
@@ -199,12 +203,21 @@ export const AlbumTitle = styled.h1`
 export const AlbumGrid = styled.div`
   padding: 5px 20px;
   display: grid;
-  grid-template-columns: 5fr 1fr;
-  grid-column-gap: 50px;
-  grid-row-gap: 20px;
+  grid-template-columns: 8fr 1fr;
+  grid-row-gap: 10px;
   margin: 0;
 `;
 
 export const AlbumDivider = styled.div`
   padding: 15px;
+`;
+
+export const RowWrapper = styled.div`
+  display: contents;
+  cursor: pointer;
+
+  &:hover > div,
+  &:hover > p {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
 `;
