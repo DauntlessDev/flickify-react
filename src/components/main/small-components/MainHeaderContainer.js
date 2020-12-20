@@ -9,7 +9,7 @@ import { signOutSuccess } from "../../../redux/api/apiActions";
 
 export default function MainHeaderContainer({ withSearchBar = false }) {
   const user = useSelector((state) => state.api.user);
-  const { showPlayer } = useContext(searchContext);
+  const { showSearch } = useContext(searchContext);
   const [clickedProfile, setClickedProfile] = useState(false);
   const dispatch = useDispatch();
 
@@ -57,11 +57,9 @@ export default function MainHeaderContainer({ withSearchBar = false }) {
           </Main.HeaderDropDown>
         ) : null}
       </Main.HeaderGroup>
-      {withSearchBar ? (
-        <Main.HeaderGroup>
-          <Main.HeaderSearchBar active={showPlayer} />
-        </Main.HeaderGroup>
-      ) : null}
+      <Main.HeaderGroup>
+        <Main.HeaderSearchBar active={showSearch} />
+      </Main.HeaderGroup>
     </Main.Header>
   ) : null;
 }
