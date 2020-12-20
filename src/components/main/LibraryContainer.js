@@ -7,7 +7,7 @@ export default function LibraryContainer() {
 
   return myPlaylist ? (
     <>
-      <Library.LibraryMainContainer>
+      <Library.GrayMainContainer>
         <Library.Title>Playlist</Library.Title>
         <Library.LibraryContainer>
           {myPlaylist &&
@@ -21,7 +21,7 @@ export default function LibraryContainer() {
               />
             ))}
         </Library.LibraryContainer>
-      </Library.LibraryMainContainer>
+      </Library.GrayMainContainer>
     </>
   ) : null;
 }

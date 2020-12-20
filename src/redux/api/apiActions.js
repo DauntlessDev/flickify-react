@@ -158,3 +158,17 @@ export const navigateToCurrentAlbum = (albumId) => {
       });
   };
 };
+
+export const searchAlbums = (stringSearch) => {
+  console.log("current search string =======", stringSearch);
+  return (dispatch) => {
+    s.searchAlbums(stringSearch)
+      .then((data) => {
+        console.log("current search date", data);
+        dispatch(setCurrentAlbum(data));
+      })
+      .catch(() => {
+        console.log("error in current search");
+      });
+  };
+};

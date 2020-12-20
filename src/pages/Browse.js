@@ -10,6 +10,7 @@ import TrackContainer from "../components/track/TrackContainer";
 import AlbumContainer from "../components/track/AlbumContainer";
 import MainHeaderContainer from "../components/main/small-components/MainHeaderContainer";
 import LibraryContainer from "../components/main/LibraryContainer";
+import SearchContainer from "../components/main/SearchContainer";
 
 export default function Browse() {
   const [showPlayer, setShowPlayer] = useState(false);
@@ -19,7 +20,7 @@ export default function Browse() {
       <searchContext.Provider value={{ showPlayer, setShowPlayer }}>
         <SidebarContainer />
 
-        <MainHeaderContainer />
+        <MainHeaderContainer withSearchBar={true} />
         <Switch>
           <Route exact path="/browse">
             <MainContainer />
@@ -29,6 +30,9 @@ export default function Browse() {
           </Route>
           <Route path={"/browse/album/:id"}>
             <AlbumContainer />
+          </Route>
+          <Route path={"/browse/search"}>
+            <SearchContainer />
           </Route>
           <Route path={"/browse/yourlibrary"}>
             <LibraryContainer />

@@ -1,4 +1,4 @@
-import React, {useState, useContext } from "react";
+import React, { useState, useContext } from "react";
 import { searchContext } from "../../../context/searchContext";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import ExpandLess from "@material-ui/icons/ExpandLess";
@@ -31,11 +31,6 @@ export default function MainHeaderContainer({ withSearchBar = false }) {
 
   return user ? (
     <Main.Header show={show}>
-      {withSearchBar ? (
-        <Main.HeaderGroup>
-          <Main.HeaderSearchBar active={showPlayer} />
-        </Main.HeaderGroup>
-      ) : null}
       <Main.HeaderGroup>
         <Main.HeaderProfileContainer
           onClick={() => {
@@ -62,6 +57,11 @@ export default function MainHeaderContainer({ withSearchBar = false }) {
           </Main.HeaderDropDown>
         ) : null}
       </Main.HeaderGroup>
+      {withSearchBar ? (
+        <Main.HeaderGroup>
+          <Main.HeaderSearchBar active={showPlayer} />
+        </Main.HeaderGroup>
+      ) : null}
     </Main.Header>
   ) : null;
 }

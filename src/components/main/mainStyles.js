@@ -33,7 +33,8 @@ export const SubTitle = styled.p`
 export const Header = styled.div`
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  flex-direction: row-reverse;
   align-items: center;
   top: 0;
   right: 0;
@@ -109,7 +110,7 @@ export const HeaderSearchBar = styled.input`
   height: 25px;
   font-size: 14px;
   border-radius: 30px;
-  margin-left: ${({ active }) => (active === true ? "25px" : "0")};
+  margin-left: ${({ active }) => (active === true ? "275px" : "0")};
   margin-right: ${({ active }) => (active === true ? "25px" : "0")};
   padding: ${({ active }) => (active === true ? "0 10px" : "0")};
   opacity: ${({ active }) => (active === true ? "1" : "0")};
@@ -234,8 +235,7 @@ export const LibraryContainer = styled.div`
   cursor: pointer;
 `;
 
-
-export const LibraryMainContainer = styled.div`
+export const GrayMainContainer = styled.div`
   background: #121212;
   margin-left: 235px;
   padding: 50px 0px;
