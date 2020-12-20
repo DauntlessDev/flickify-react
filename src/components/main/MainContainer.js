@@ -5,7 +5,6 @@ import * as Main from "./mainStyles";
 import AlbumContainer from "./small-components/AlbumContainer";
 import ArtistContainer from "./small-components/ArtistContainer";
 
-
 export default function MainContainer() {
   const recentlyPlayed = useSelector((state) => state.api.recentlyPlayed);
   const newReleases = useSelector((state) => state.api.newReleases);

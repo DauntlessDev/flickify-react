@@ -9,6 +9,7 @@ import { Route, Switch } from "react-router-dom";
 import TrackContainer from "../components/track/TrackContainer";
 import AlbumContainer from "../components/track/AlbumContainer";
 import MainHeaderContainer from "../components/main/small-components/MainHeaderContainer";
+import LibraryContainer from "../components/main/LibraryContainer";
 
 export default function Browse() {
   const [showPlayer, setShowPlayer] = useState(false);
@@ -28,6 +29,9 @@ export default function Browse() {
           </Route>
           <Route path={"/browse/album/:id"}>
             <AlbumContainer />
+          </Route>
+          <Route path={"/browse/yourlibrary"}>
+            <LibraryContainer />
           </Route>
         </Switch>
       </searchContext.Provider>

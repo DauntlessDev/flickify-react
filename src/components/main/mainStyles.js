@@ -2,6 +2,7 @@ import styled from "styled-components/macro";
 import { Link as ReactRouterLink } from "react-router-dom";
 
 export const MainContainer = styled.div`
+  background: #121212;
   background: url(${({ src }) => src ? `${src}` : "assets/background/browse-feature1.png"})
     left / cover no-repeat;
   margin-left: 235px;
@@ -223,4 +224,26 @@ export const ArtistPosition = styled.p`
 export const CardLink = styled(ReactRouterLink)`
   text-decoration: none;
   color: white;
+`;
+
+export const LibraryContainer = styled.div`
+  display: inline-flex;
+  padding-left: 30px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+  cursor: pointer;
+`;
+
+
+export const LibraryMainContainer = styled.div`
+  background: #121212;
+  margin-left: 235px;
+  padding: 50px 0px;
+  color: white;
+  min-height: 700px;
+
+  @media (max-width: 700px) {
+    width: 100%;
+    margin-left: 0;
+  }
 `;
