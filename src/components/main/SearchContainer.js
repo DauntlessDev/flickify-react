@@ -11,7 +11,7 @@ export default function SearchContainer() {
         <Search.SearchEmptyContainer>
           <Search.SearchEmptyImage src="../assets/images/search_image.png" />
           <Search.SearchEmptyText>
-            Discover & try searching albums and tracks to listen.
+            Discover & try searching albums and tracks to listen for the current mood.
           </Search.SearchEmptyText>
         </Search.SearchEmptyContainer>
       </Search.GrayMainContainer>
