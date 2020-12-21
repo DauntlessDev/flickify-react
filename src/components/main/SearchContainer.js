@@ -6,7 +6,15 @@ export default function SearchContainer() {
   return (
     <>
       <MainHeaderContainer withSearchBar={true} />
-      <Search.GrayMainContainer />
+
+      <Search.GrayMainContainer>
+        <Search.SearchEmptyContainer>
+          <Search.SearchEmptyImage src="../assets/images/search_image.png" />
+          <Search.SearchEmptyText>
+            Discover & try searching albums and tracks to listen.
+          </Search.SearchEmptyText>
+        </Search.SearchEmptyContainer>
+      </Search.GrayMainContainer>
     </>
   );
 }

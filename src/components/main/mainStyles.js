@@ -247,3 +247,21 @@ export const GrayMainContainer = styled.div`
     margin-left: 0;
   }
 `;
+
+export const SearchEmptyContainer = styled.div`
+  margin: auto auto;
+  max-width: 500px;
+`;
+
+export const SearchEmptyImage = styled.img`
+  margin-top: 20px;
+  width:100%;
+`;
+
+export const SearchEmptyText = styled.p`
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  text-align: center;
+`;
