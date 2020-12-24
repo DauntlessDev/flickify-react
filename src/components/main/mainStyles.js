@@ -3,8 +3,6 @@ import { Link as ReactRouterLink } from "react-router-dom";
 
 export const MainContainer = styled.div`
   background: #121212;
-  background: url(${({ src }) => src ? `${src}` : "assets/background/browse-feature1.png"})
-    left / cover no-repeat;
   margin-left: 235px;
   padding: 50px 0px;
   color: white;
@@ -56,6 +54,7 @@ export const HeaderProfileContainer = styled.div`
   border-radius: 30px;
   background: #070707;
   cursor: pointer;
+  margin: 3px 0;
 
   &:hover {
     background-color: #282828;
@@ -81,12 +80,12 @@ export const HeaderProfileSymbol = styled.div`
 `;
 
 export const HeaderDropDown = styled.div`
-  background-color: black;
   border-radius: 5px;
   top: 56px;
   right: 20px;
   padding: 2px;
   position: fixed;
+  background-color: #282828;
 `;
 
 export const HeaderDropDownOptions = styled.p`
@@ -100,9 +99,10 @@ export const HeaderDropDownOptions = styled.p`
   background-color: black;
   text-align: left;
   width: 100px;
+  background-color: #282828;
 
   &:hover {
-    background-color: #282828;
+    background-color: #3E3E3E;
   }
 `;
 
@@ -139,9 +139,6 @@ export const HeaderSearchBarIcon = styled.div`
     color: black;
     margin: 0;
 `;
-
-
-
 
 export const HeaderTextLink = styled.p`
   padding: 15px 25px;
@@ -183,10 +180,11 @@ export const CardGroup = styled.div`
   margin-top: 15px;
   margin-right: 25px;
   padding: 15px;
-  background-color: #0f0e0e;
   border-radius: 5px;
   width: 150px;
   height: 220px;
+  
+  background-color: #1D1D1D;
 
   &:hover {
     background-color: #282828;
@@ -256,6 +254,7 @@ export const LibraryContainer = styled.div`
   margin-bottom: 25px;
   flex-wrap: wrap;
   cursor: pointer;
+  
 `;
 
 export const GrayMainContainer = styled.div`
