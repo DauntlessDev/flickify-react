@@ -41,15 +41,17 @@ export const Header = styled.div`
   position: fixed;
   background: ${({ show }) => (show ? "#070707" : "none")};
   transition: background-color 0.3s ease;
-  padding: 3px 0px;
+  padding: 10px 0px;
 `;
 
-export const HeaderGroup = styled.div``;
+export const HeaderGroup = styled.div`
+  margin: 0;
+  padding: 0;
+`;
 
 export const HeaderProfileContainer = styled.div`
   display: inline-flex;
   align-items: center;
-  margin: 10px;
   margin-right: 15px;
   border-radius: 30px;
   background: #070707;
@@ -59,6 +61,7 @@ export const HeaderProfileContainer = styled.div`
     background-color: #282828;
   }
 `;
+
 
 export const HeaderProfile = styled.img`
   width: 35px;
@@ -103,23 +106,43 @@ export const HeaderDropDownOptions = styled.p`
   }
 `;
 
-export const HeaderSearchBar = styled.input`
-  background-color: rgba(150, 150, 150, 0.3);
-  color: white;
-  transition: width 0.5s;
+export const HeaderSearchBarInput = styled.input`
+  color: black;
   height: 25px;
-  font-size: 14px;
   border-radius: 30px;
-  margin-left: ${({ active }) => (active === true ? "275px" : "0")};
-  margin-right: ${({ active }) => (active === true ? "25px" : "0")};
-  padding: ${({ active }) => (active === true ? "0 10px" : "0")};
-  opacity: ${({ active }) => (active === true ? "1" : "0")};
-  width: ${({ active }) => (active === true ? "200px" : "0px")};
+  width: 200px;
+  margin: 0;
+  padding: 7px;
+  padding-left: 50px;
 
-  /* @media (max-width: 1000px) {
-    max-width: 200px;
-  } */
 `;
+
+
+
+export const HeaderSearchBarContainer = styled.div`
+  color: black;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  margin-left: 275px;
+  position: relative;
+
+`;
+
+
+
+export const HeaderSearchBarIcon = styled.div`
+    position: absolute;
+    top: 8px;
+    left: 12px;
+    z-index: 1;
+    color: black;
+    margin: 0;
+`;
+
+
+
+
 export const HeaderTextLink = styled.p`
   padding: 15px 25px;
   font-weight: 600;

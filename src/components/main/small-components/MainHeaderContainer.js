@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { searchContext } from "../../../context/searchContext";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import ExpandLess from "@material-ui/icons/ExpandLess";
+import Search from "@material-ui/icons/Search";
 import * as Main from "../mainStyles";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
@@ -18,6 +19,11 @@ export default function MainHeaderContainer({ withSearchBar = false }) {
       width: 18,
       height: 18,
       padding: 5,
+    },
+
+    searchSymbol: {
+      width: 28,
+      height: 28,
     },
   };
 
@@ -58,7 +64,16 @@ export default function MainHeaderContainer({ withSearchBar = false }) {
         ) : null}
       </Main.HeaderGroup>
       <Main.HeaderGroup>
-        <Main.HeaderSearchBar active={showSearch} />
+        {showSearch ? (
+          <>
+            <Main.HeaderSearchBarContainer>
+              <Main.HeaderSearchBarIcon>
+                <Search style={style.searchSymbol}/>
+              </Main.HeaderSearchBarIcon>
+              <Main.HeaderSearchBarInput placeholder="Search for Albums" />
+            </Main.HeaderSearchBarContainer>
+          </>
+        ) : null}
       </Main.HeaderGroup>
     </Main.Header>
   ) : null;
