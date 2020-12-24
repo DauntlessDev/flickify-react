@@ -50,11 +50,11 @@ export const HeaderGroup = styled.div`
 export const HeaderProfileContainer = styled.div`
   display: inline-flex;
   align-items: center;
-  margin-right: 15px;
   border-radius: 30px;
   background: #070707;
   cursor: pointer;
   margin: 3px 0;
+  margin-right: 15px;
 
   &:hover {
     background-color: #282828;
