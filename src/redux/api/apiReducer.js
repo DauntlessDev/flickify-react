@@ -11,6 +11,7 @@ const initState = {
   artists: null,
   currentPlaylist: null,
   currentAlbum: null,
+  currentSearch: null,
 };
 
 const apiReducer = (state = initState, action) => {
@@ -77,6 +78,13 @@ const apiReducer = (state = initState, action) => {
       return {
         ...state,
         currentAlbum: action.payload,
+      };
+
+    case TYPES.SET_CURRENT_SEARCH:
+      console.log("current search-album:", action.payload);
+      return {
+        ...state,
+        currentSearch: action.payload,
       };
 
     default:

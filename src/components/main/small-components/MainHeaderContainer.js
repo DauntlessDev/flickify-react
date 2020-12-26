@@ -6,13 +6,21 @@ import Search from "@material-ui/icons/Search";
 import * as Main from "../mainStyles";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { signOutSuccess } from "../../../redux/api/apiActions";
+import { searchAlbums, signOutSuccess } from "../../../redux/api/apiActions";
+import { useEffect } from "react";
 
 export default function MainHeaderContainer({ withSearchBar = false }) {
   const user = useSelector((state) => state.api.user);
+  const currentSearch = useSelector((state) => state.api.currentSearch);
   const { showSearch } = useContext(searchContext);
   const [clickedProfile, setClickedProfile] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(searchAlbums(searchTerm));
+    console.log("data of search in header", currentSearch);
+  }, [searchTerm]);
 
   const style = {
     profileSymbol: {
@@ -68,9 +76,13 @@ export default function MainHeaderContainer({ withSearchBar = false }) {
           <>
             <Main.HeaderSearchBarContainer>
               <Main.HeaderSearchBarIcon>
-                <Search style={style.searchSymbol}/>
+                <Search style={style.searchSymbol} />
               </Main.HeaderSearchBarIcon>
-              <Main.HeaderSearchBarInput placeholder="Search for Albums" />
+              <Main.HeaderSearchBarInput
+                value={searchTerm}
+                placeholder="Search for Albums"
+                onChange={({ target }) => setSearchTerm(target.value)}
+              />
             </Main.HeaderSearchBarContainer>
           </>
         ) : null}

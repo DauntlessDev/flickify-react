@@ -47,6 +47,10 @@ export const setCurrentAlbum = (album) => {
   return { type: TYPES.SET_CURRENT_ALBUM, payload: album };
 };
 
+export const setCurrentSearch = (album) => {
+  return { type: TYPES.SET_CURRENT_SEARCH, payload: album };
+};
+
 export const getTokenFromResponse = () => {
   return (dispatch) => {
     const token = window.location.hash
@@ -151,7 +155,12 @@ export const navigateToCurrentAlbum = (albumId) => {
     s.getAlbum(albumId)
       .then((data) => {
         console.log("current album", data);
-        dispatch(setCurrentAlbum(data));
+
+        if (data) {
+          dispatch(setCurrentAlbum(data));
+        } else {
+          dispatch(setCurrentAlbum(null));
+        }
       })
       .catch(() => {
         console.log("error in current album");
@@ -162,13 +171,17 @@ export const navigateToCurrentAlbum = (albumId) => {
 export const searchAlbums = (stringSearch) => {
   console.log("current search string =======", stringSearch);
   return (dispatch) => {
-    s.searchAlbums(stringSearch)
-      .then((data) => {
-        console.log("current search date", data);
-        dispatch(setCurrentAlbum(data));
-      })
-      .catch(() => {
-        console.log("error in current search");
-      });
+    if (stringSearch.length > 3) {
+      s.searchAlbums(stringSearch)
+        .then((data) => {
+          console.log("current search date", data);
+          dispatch(setCurrentSearch(data));
+        })
+        .catch(() => {
+          console.log("error in current search");
+        });
+    } else {
+      dispatch(setCurrentSearch(null));
+    }
   };
 };
