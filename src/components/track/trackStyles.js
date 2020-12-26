@@ -110,6 +110,7 @@ export const Grid = styled.div`
 export const TrackPlaylistContainer = styled.div`
   padding: 25px 32px 0px;
   background: #1d1d1d;
+  min-height: 500px;
 
   @media (max-width: 1100px) and (max-width: 800px) {
     padding: 25px 15px 0px;
