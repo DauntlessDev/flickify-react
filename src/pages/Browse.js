@@ -38,7 +38,7 @@ export default function Browse() {
           </Route>
         </Switch>
       </searchContext.Provider>
-      {/* <MusicPlayer /> */}
+      <MusicPlayer />
     </>
   );
 }
