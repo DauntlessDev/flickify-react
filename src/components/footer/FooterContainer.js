@@ -46,7 +46,7 @@ export default function FooterContainer() {
           <Footer.TextSmall>Privacy Center</Footer.TextSmall>
           <Footer.TextSmall>Privacy Policy</Footer.TextSmall>
           <Footer.TextSmall>Cookies</Footer.TextSmall>
-          <Footer.TextSmall>About Adds</Footer.TextSmall>
+          <Footer.TextSmall>About Us</Footer.TextSmall>
         </Footer.BottomGroup>
         <Footer.BottomGroup>
           <Footer.IconGroup>

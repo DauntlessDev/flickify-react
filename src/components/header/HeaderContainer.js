@@ -13,10 +13,10 @@ export default function HeaderContainer() {
         </Header.LogoLink>
       </Header.Group>
       <Header.Group>
-        <Header.RedirectLink>Premium</Header.RedirectLink>
+        {/* <Header.RedirectLink>Premium</Header.RedirectLink>
         <Header.RedirectLink>Help</Header.RedirectLink>
         <Header.RedirectLink>Download</Header.RedirectLink>
-        <Header.Line />
+        <Header.Line /> */}
         <Header.TextLink to={ROUTES.SIGN_UP}>Sign Up</Header.TextLink>
         <Header.RedirectLink href={loginUrl}>Log In</Header.RedirectLink>
       </Header.Group>

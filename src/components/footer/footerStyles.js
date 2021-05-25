@@ -58,6 +58,7 @@ export const Text = styled.p`
 export const BottomGroup = styled.div`
   display: flex;
   flex-flow: row;
+  flex-wrap: wrap;
 `;
 
 export const IconGroup = styled.div`
