@@ -7,6 +7,8 @@ export const MainContainer = styled.div`
   padding: 50px 0px;
   color: white;
 
+  box-sizing: border-box;
+
   @media (max-width: 700px) {
     width: 100%;
     margin-left: 0;
@@ -45,6 +47,12 @@ export const Header = styled.div`
 export const HeaderGroup = styled.div`
   margin: 0;
   padding: 0;
+  display: flex;
+`;
+
+export const HeaderBurger = styled.div`
+  margin-left: 30px;
+  cursor: pointer;
 `;
 
 export const HeaderProfileContainer = styled.div`
@@ -60,7 +68,6 @@ export const HeaderProfileContainer = styled.div`
     background-color: #282828;
   }
 `;
-
 
 export const HeaderProfile = styled.img`
   width: 35px;
@@ -102,7 +109,7 @@ export const HeaderDropDownOptions = styled.p`
   background-color: #282828;
 
   &:hover {
-    background-color: #3E3E3E;
+    background-color: #3e3e3e;
   }
 `;
 
@@ -115,29 +122,52 @@ export const HeaderSearchBarInput = styled.input`
   padding: 7px;
   padding-left: 50px;
 
+  @media (max-width: 800px) {
+    width: 130px;
+  }
+
+  @media (max-width: 450px) {
+    width: 60px;
+    font-size: 10px;
+  }
+  @media (max-width: 400px) {
+    width: 40px;
+    font-size: 8px;
+  }
 `;
 
+export const SidebarMobile = styled.div`
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: start;
+  position: fixed;
+  text-align: center;
+  flex-direction: column;
+  top: 0;
+  right: 0;
+`;
 
+export const SidebarMobileInner = styled.div`
+  width: 100%;
+`;
 
 export const HeaderSearchBarContainer = styled.div`
   color: black;
   font-size: 16px;
   padding: 0;
   margin: 0;
-  margin-left: 275px;
   position: relative;
-
+  margin-right: 10px;
 `;
 
-
-
 export const HeaderSearchBarIcon = styled.div`
-    position: absolute;
-    top: 8px;
-    left: 12px;
-    z-index: 1;
-    color: black;
-    margin: 0;
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  z-index: 1;
+  color: black;
+  margin: 0;
 `;
 
 export const HeaderTextLink = styled.p`
@@ -183,8 +213,8 @@ export const CardGroup = styled.div`
   border-radius: 5px;
   width: 150px;
   height: 220px;
-  
-  background-color: #1D1D1D;
+
+  background-color: #1d1d1d;
 
   &:hover {
     background-color: #282828;
@@ -213,9 +243,14 @@ export const CardGroup = styled.div`
     width: 150px;
     height: 220px;
   }
+  @media (max-width: 420px) {
+    box-sizing: border-box;
+  }
+
   @media (max-width: 400px) {
     width: 80px;
     height: 140px;
+    box-sizing: content-box;
   }
 `;
 
@@ -254,7 +289,6 @@ export const LibraryContainer = styled.div`
   margin-bottom: 25px;
   flex-wrap: wrap;
   cursor: pointer;
-  
 `;
 
 export const GrayMainContainer = styled.div`
@@ -277,7 +311,7 @@ export const SearchEmptyContainer = styled.div`
 
 export const SearchEmptyImage = styled.img`
   margin-top: 20px;
-  width:100%;
+  width: 100%;
 `;
 
 export const SearchEmptyText = styled.p`

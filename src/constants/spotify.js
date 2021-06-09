@@ -1,5 +1,6 @@
 export const authEndpoint = "https://accounts.spotify.com/authorize";
-const redirectUri = "https://flickify.netlify.app/";
+// const redirectUri = "https://flickify.netlify.app/";
+const redirectUri = "http://localhost:3000";
 const clientId = "ef7f7c0211f24baf99e8f8de93c4b91e";
 
 const scopes = [

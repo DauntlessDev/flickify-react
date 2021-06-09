@@ -67,6 +67,7 @@ export const Logo = styled.img`
   padding-left: 30px;
   height: 45px;
   display: block;
+  
 `;
 export const SectionLogo = styled.div`
   width: 10px;
@@ -97,4 +98,33 @@ export const PlaylistItem = styled(ReactRouterLink)`
   font-weight: 500;
   font-size:14px;
   padding: 0 40px;
+`;
+
+
+//mobile
+export const MobileContainer = styled.div`
+  width: 235px;
+  height: 100%;
+  background-color: black;
+  opacity: 0.9;
+  position: fixed;
+  top:0;
+  left: 0;
+  float: left;
+  z-index: 5;
+
+  @media (min-width: 700px) {
+    display:none;
+  }
+
+`;
+
+export const InlineContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const ExitSidebar = styled.div`
+  display: inline;
+  cursor: pointer;
 `;

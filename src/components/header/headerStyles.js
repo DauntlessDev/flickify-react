@@ -9,6 +9,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 5px 140px;
+  box-sizing: border-box;
 
   @media (max-width: 1000px) {
     padding: 5px 10px;

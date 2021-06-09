@@ -2,17 +2,20 @@ import React, { useState, useContext } from "react";
 import { searchContext } from "../../../context/searchContext";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import ExpandLess from "@material-ui/icons/ExpandLess";
+import MenuIcon from "@material-ui/icons/Menu";
 import Search from "@material-ui/icons/Search";
 import * as Main from "../mainStyles";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { searchAlbums, signOutSuccess } from "../../../redux/api/apiActions";
 import { useEffect } from "react";
+import { mobileSidebarContext } from "../../../context/mobileSidebarContext";
 
 export default function MainHeaderContainer({ withSearchBar = false }) {
   const user = useSelector((state) => state.api.user);
   const currentSearch = useSelector((state) => state.api.currentSearch);
   const { showSearch } = useContext(searchContext);
+  const { showSidebar, setShowSidebar } = useContext(mobileSidebarContext);
   const [clickedProfile, setClickedProfile] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const dispatch = useDispatch();
@@ -46,6 +49,20 @@ export default function MainHeaderContainer({ withSearchBar = false }) {
   return user ? (
     <Main.Header show={show}>
       <Main.HeaderGroup>
+        {showSearch ? (
+          <>
+            <Main.HeaderSearchBarContainer>
+              <Main.HeaderSearchBarIcon>
+                <Search style={style.searchSymbol} />
+              </Main.HeaderSearchBarIcon>
+              <Main.HeaderSearchBarInput
+                value={searchTerm}
+                placeholder="Search for Albums"
+                onChange={({ target }) => setSearchTerm(target.value)}
+              />
+            </Main.HeaderSearchBarContainer>
+          </>
+        ) : null}
         <Main.HeaderProfileContainer
           onClick={() => {
             setClickedProfile(!clickedProfile);
@@ -71,21 +88,15 @@ export default function MainHeaderContainer({ withSearchBar = false }) {
           </Main.HeaderDropDown>
         ) : null}
       </Main.HeaderGroup>
+
       <Main.HeaderGroup>
-        {showSearch ? (
-          <>
-            <Main.HeaderSearchBarContainer>
-              <Main.HeaderSearchBarIcon>
-                <Search style={style.searchSymbol} />
-              </Main.HeaderSearchBarIcon>
-              <Main.HeaderSearchBarInput
-                value={searchTerm}
-                placeholder="Search for Albums"
-                onChange={({ target }) => setSearchTerm(target.value)}
-              />
-            </Main.HeaderSearchBarContainer>
-          </>
-        ) : null}
+        <Main.HeaderBurger
+          onClick={() => {
+            setShowSidebar(!showSidebar);
+          }}
+        >
+          <MenuIcon />
+        </Main.HeaderBurger>
       </Main.HeaderGroup>
     </Main.Header>
   ) : null;

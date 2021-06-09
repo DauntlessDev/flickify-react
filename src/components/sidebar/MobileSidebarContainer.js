@@ -4,19 +4,31 @@ import SectionContainer from "./small-components/SectionContainer";
 import HomeIcon from "@material-ui/icons/Home";
 import SearchIcon from "@material-ui/icons/Search";
 import LibraryMusicIcon from "@material-ui/icons/LibraryMusic";
+import CloseIcon from "@material-ui/icons/Close";
 import { useContext } from "react";
 import { searchContext } from "../../context/searchContext";
 import { useDispatch, useSelector } from "react-redux";
 import { navigateToCurrentPlaylist } from "../../redux/api/apiActions";
+import { mobileSidebarContext } from "../../context/mobileSidebarContext";
 
-export default function SidebarContainer() {
+export default function MobileSidebarContainer() {
   const { showSearch, setShowSearch } = useContext(searchContext);
+  const { setShowSidebar } = useContext(mobileSidebarContext);
   const myPlaylist = useSelector((state) => state.api.myPlaylist);
   const dispatch = useDispatch();
 
   return myPlaylist ? (
-    <SideBar.Container>
-      <SideBar.Logo src="assets/logo.png" />
+    <SideBar.MobileContainer>
+      <SideBar.InlineContainer>
+        <SideBar.Logo src="/assets/logo.png" />
+        <SideBar.ExitSidebar
+          onClick={() => {
+            setShowSidebar(false);
+          }}
+        >
+          <CloseIcon />
+        </SideBar.ExitSidebar>
+      </SideBar.InlineContainer>
       <SectionContainer
         toLink="/browse"
         icon={<HomeIcon />}
@@ -60,6 +72,6 @@ export default function SidebarContainer() {
           {item.name}
         </SideBar.PlaylistItem>
       ))}
-    </SideBar.Container>
+    </SideBar.MobileContainer>
   ) : null;
 }
