@@ -63,70 +63,70 @@ export const getTokenFromResponse = () => {
         return initial;
       }, {});
 
-    console.log('authtoken === "" ', token.access_token);
-    console.log('token.access_token === "" ', token.access_token === "");
+    // console.log('authtoken === "" ', token.access_token);
+    // console.log('token.access_token === "" ', token.access_token === "");
 
     if (typeof token.access_token === "undefined") {
       dispatch(fetchTokenFailure());
     } else {
       dispatch(fetchTokenSuccess(token));
 
-      console.log("token", token);
+      // console.log("token", token);
 
       if (token) {
         s.setAccessToken(token.access_token);
         s.getMe()
           .then((user) => {
-            console.log("user", user);
+            // console.log("user", user);
             dispatch(setUserInfo(user));
           })
           .catch(() => {
-            console.log("error in user");
+            // console.log("error in user");
           });
 
         s.getUserPlaylists()
           .then((playlist) => {
-            console.log("userplaylist", playlist);
+            // console.log("userplaylist", playlist);
             dispatch(setMyPlaylist(playlist.items));
           })
           .catch(() => {
-            console.log("error in userplaylist");
+            // console.log("error in userplaylist");
           });
 
         s.getMyRecentlyPlayedTracks()
           .then((recently) => {
-            console.log("recently", recently);
+            // console.log("recently", recently);
             dispatch(setRecentlyPlayed(recently.items));
           })
           .catch(() => {
-            console.log("error in recently");
+            // console.log("error in recently");
           });
 
         s.getNewReleases()
           .then((release) => {
-            console.log("new release", release);
+            // console.log("new release", release);
             dispatch(setNewReleases(release.albums.items));
           })
           .catch(() => {
-            console.log("error in new releases");
+            // console.log("error in new releases");
           });
 
         s.getMyTopTracks()
           .then((topTracks) => {
-            console.log("toptracks", topTracks);
+            // console.log("toptracks", topTracks);
             dispatch(setTopTracks(topTracks.items));
           })
           .catch(() => {
-            console.log("error in topTracks");
+            // console.log("error in topTracks");
           });
 
         s.getArtistRelatedArtists("4DAcJXcjX0zlQAZAPAx4Zb")
           .then((data) => {
-            console.log("artist", data);
+            // console.log("artist", data);
             dispatch(setArtists(data.artists));
           })
           .catch(() => {
-            console.log("error in artist");
+            // console.log("error in artist");
           });
       }
 
@@ -136,25 +136,25 @@ export const getTokenFromResponse = () => {
 };
 
 export const navigateToCurrentPlaylist = (playlistId) => {
-  console.log("current playlist ID =======", playlistId);
+  // console.log("current playlist ID =======", playlistId);
   return (dispatch) => {
     s.getPlaylist(playlistId)
       .then((data) => {
-        console.log("current playlist", data);
+        // console.log("current playlist", data);
         dispatch(setCurrentPlaylist(data));
       })
       .catch(() => {
-        console.log("error in current playlist");
+        // console.log("error in current playlist");
       });
   };
 };
 
 export const navigateToCurrentAlbum = (albumId) => {
-  console.log("current album ID =======", albumId);
+  // console.log("current album ID =======", albumId);
   return (dispatch) => {
     s.getAlbum(albumId)
       .then((data) => {
-        console.log("current album", data);
+        // console.log("current album", data);
 
         if (data) {
           dispatch(setCurrentAlbum(data));
@@ -163,22 +163,22 @@ export const navigateToCurrentAlbum = (albumId) => {
         }
       })
       .catch(() => {
-        console.log("error in current album");
+        // console.log("error in current album");
       });
   };
 };
 
 export const searchAlbums = (stringSearch) => {
-  console.log("current search string =======", stringSearch);
+  // console.log("current search string =======", stringSearch);
   return (dispatch) => {
     if (stringSearch.length > 3) {
       s.searchAlbums(stringSearch)
         .then((data) => {
-          console.log("current search date", data);
+          // console.log("current search date", data);
           dispatch(setCurrentSearch(data));
         })
         .catch(() => {
-          console.log("error in current search");
+          // console.log("error in current search");
         });
     } else {
       dispatch(setCurrentSearch(null));

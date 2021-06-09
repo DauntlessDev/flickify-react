@@ -35,7 +35,7 @@ export default function MobileSidebarContainer() {
         title="Home"
         onClick={() => {
           setShowSearch(false);
-          console.log("yo", showSearch);
+          // console.log("yo", showSearch);
         }}
       />
       <SectionContainer
@@ -44,7 +44,7 @@ export default function MobileSidebarContainer() {
         title="Search"
         onClick={() => {
           setShowSearch(true);
-          console.log("yo", showSearch);
+          // console.log("yo", showSearch);
         }}
       />
       <SectionContainer
@@ -53,7 +53,7 @@ export default function MobileSidebarContainer() {
         title="Your Library"
         onClick={() => {
           setShowSearch(false);
-          console.log("yo", showSearch);
+          // console.log("yo", showSearch);
         }}
       />
       <SideBar.Break />
@@ -65,7 +65,7 @@ export default function MobileSidebarContainer() {
           to={`/browse/track/${item.id}`}
           onClick={() => {
             setShowSearch(false);
-            console.log("yo", showSearch);
+            // console.log("yo", showSearch);
             dispatch(navigateToCurrentPlaylist(item.id));
           }}
         >

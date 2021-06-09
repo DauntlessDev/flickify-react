@@ -22,7 +22,7 @@ export default function MainHeaderContainer({ withSearchBar = false }) {
 
   useEffect(() => {
     dispatch(searchAlbums(searchTerm));
-    console.log("data of search in header", currentSearch);
+    // console.log("data of search in header", currentSearch);
   }, [searchTerm]);
 
   const style = {

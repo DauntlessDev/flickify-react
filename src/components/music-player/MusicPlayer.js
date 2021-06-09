@@ -173,37 +173,37 @@ export default function MusicPlayer() {
 
     // Music is downloaded handle
     onAudioDownload(audioInfo) {
-      console.log("audio download", audioInfo);
+      // console.log("audio download", audioInfo);
     },
 
     // audio play handle
     onAudioPlay(audioInfo) {
-      console.log("audio playing", audioInfo);
+      // console.log("audio playing", audioInfo);
     },
 
     // audio pause handle
     onAudioPause(audioInfo) {
-      console.log("audio pause", audioInfo);
+      // console.log("audio pause", audioInfo);
     },
 
     // When the user has moved/jumped to a new location in audio
     onAudioSeeked(audioInfo) {
-      console.log("audio seeked", audioInfo);
+      // console.log("audio seeked", audioInfo);
     },
 
     // When the volume has changed  min = 0.0  max = 1.0
     onAudioVolumeChange(currentVolume) {
-      console.log("audio volume change", currentVolume);
+      // console.log("audio volume change", currentVolume);
     },
 
     // The single song is ended handle
     onAudioEnded(currentPlayId, audioLists, audioInfo) {
-      console.log("audio ended", currentPlayId, audioLists, audioInfo);
+      // console.log("audio ended", currentPlayId, audioLists, audioInfo);
     },
 
     // audio load abort
     onAudioAbort(currentPlayId, audioLists, audioInfo) {
-      console.log("audio abort", currentPlayId, audioLists, audioInfo);
+      // console.log("audio abort", currentPlayId, audioLists, audioInfo);
     },
 
     // audio play progress handle
@@ -214,7 +214,7 @@ export default function MusicPlayer() {
 
     // audio reload handle
     onAudioReload(audioInfo) {
-      console.log("audio reload:", audioInfo);
+      // console.log("audio reload:", audioInfo);
     },
 
     // audio load failed error handle
@@ -234,16 +234,16 @@ export default function MusicPlayer() {
     // },
 
     onAudioListsChange(currentPlayId, audioLists, audioInfo) {
-      console.log("audio lists change:", currentPlayId, audioLists, audioInfo);
+      // console.log("audio lists change:", currentPlayId, audioLists, audioInfo);
     },
 
     onAudioPlayTrackChange(currentPlayId, audioLists, audioInfo) {
-      console.log(
-        "audio play track change:",
-        currentPlayId,
-        audioLists,
-        audioInfo
-      );
+      // console.log(
+      //   "audio play track change:",
+      //   currentPlayId,
+      //   audioLists,
+      //   audioInfo
+      // );
     },
 
     // onPlayModeChange(playMode) {
@@ -255,15 +255,15 @@ export default function MusicPlayer() {
     // },
 
     onAudioListsPanelChange(panelVisible) {
-      console.log("audio lists panel visible:", panelVisible);
+      // console.log("audio lists panel visible:", panelVisible);
     },
 
     onAudioListsDragEnd(fromIndex, endIndex) {
-      console.log("audio lists drag end:", fromIndex, endIndex);
+      // console.log("audio lists drag end:", fromIndex, endIndex);
     },
 
     onAudioLyricChange(lineNum, currentLyric) {
-      console.log("audio lyric change:", lineNum, currentLyric);
+      // console.log("audio lyric change:", lineNum, currentLyric);
     },
 
     // custom music player root node
@@ -278,13 +278,13 @@ export default function MusicPlayer() {
      * audio.crossOrigin = 'xxx' // config cross origin
      */
     getAudioInstance(audio) {
-      console.log("audio instance", audio);
+      // console.log("audio instance", audio);
     },
 
     onBeforeDestroy(currentPlayId, audioLists, audioInfo) {
-      console.log("onBeforeDestroy currentPlayId: ", currentPlayId);
-      console.log("onBeforeDestroy audioLists: ", audioLists);
-      console.log("onBeforeDestroy audioInfo: ", audioInfo);
+      // console.log("onBeforeDestroy currentPlayId: ", currentPlayId);
+      // console.log("onBeforeDestroy audioLists: ", audioLists);
+      // console.log("onBeforeDestroy audioInfo: ", audioInfo);
       return new Promise((resolve, reject) => {
         // your custom validate
         // eslint-disable-next-line no-alert
@@ -299,11 +299,11 @@ export default function MusicPlayer() {
     },
 
     onDestroyed(currentPlayId, audioLists, audioInfo) {
-      console.log("onDestroyed:", currentPlayId, audioLists, audioInfo);
+      // console.log("onDestroyed:", currentPlayId, audioLists, audioInfo);
     },
 
     onCoverClick(mode, audioLists, audioInfo) {
-      console.log("onCoverClick: ", mode, audioLists, audioInfo);
+      // console.log("onCoverClick: ", mode, audioLists, audioInfo);
     },
 
     // custom audio title

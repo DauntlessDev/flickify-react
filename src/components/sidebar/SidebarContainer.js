@@ -23,7 +23,6 @@ export default function SidebarContainer() {
         title="Home"
         onClick={() => {
           setShowSearch(false);
-          console.log("yo", showSearch);
         }}
       />
       <SectionContainer
@@ -32,7 +31,6 @@ export default function SidebarContainer() {
         title="Search"
         onClick={() => {
           setShowSearch(true);
-          console.log("yo", showSearch);
         }}
       />
       <SectionContainer
@@ -41,7 +39,6 @@ export default function SidebarContainer() {
         title="Your Library"
         onClick={() => {
           setShowSearch(false);
-          console.log("yo", showSearch);
         }}
       />
       <SideBar.Break />
@@ -53,7 +50,6 @@ export default function SidebarContainer() {
           to={`/browse/track/${item.id}`}
           onClick={() => {
             setShowSearch(false);
-            console.log("yo", showSearch);
             dispatch(navigateToCurrentPlaylist(item.id));
           }}
         >
